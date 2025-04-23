@@ -5,6 +5,28 @@
 
 @section('styles')
 <style>
+       .page-banner {
+            position: relative;
+            background: url('{{ asset('images/characters/banner2.jpg') }}') no-repeat center center;
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
     /* Contact Page Styles */
 .contact-section {
     background: linear-gradient(to bottom, #0e0b14 0%, #1a1436 100%);

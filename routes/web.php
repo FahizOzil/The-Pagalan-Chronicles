@@ -16,6 +16,10 @@ Route::get('/books', [BooksController::class, 'index'])->name('books');
 Route::get('/books/{slug}', [BooksController::class, 'show'])->name('books.show');
 Route::get('/books/checkot', [BooksController::class, 'show'])->name('books.purchase');
 
+// buy now
+
+Route::get('/buy', [BooksController::class, 'buyNow'])->name('books.buy-now');
+
 // World of Pagalan
 Route::get('/world', [WorldController::class, 'index'])->name('world');
 Route::get('/world/maps', [WorldController::class, 'maps'])->name('world.maps');

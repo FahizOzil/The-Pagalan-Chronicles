@@ -13,7 +13,7 @@
         
         .page-banner {
             position: relative;
-            background: url('{{ asset('images/panel.jpg') }}') no-repeat center center;
+            background: url('{{ asset('images/characters/panel.jpg') }}') no-repeat center center;
             background-size: cover;
             height: 50vh;
             display: flex;
@@ -22,6 +22,7 @@
             color: #fff;
             text-align: center;
             overflow: hidden;
+            margin-top: 124px;
         }
         
         .page-banner::before {
@@ -53,6 +54,10 @@
             margin-bottom: 0.5rem;
             position: relative;
             display: inline-block;
+            color:white;
+        }
+        .bio-content{
+            color:white;
         }
         
         .author-bio h2::after {
@@ -63,6 +68,12 @@
             width: 80%;
             height: 3px;
             background: linear-gradient(to right, #141118, var(--primary-color));
+        }
+        .section-title{
+            color:white !important;
+        }
+        .timeline-content p , .timeline-content span{
+            color : white;
         }
         
         .author-bio .lead {
@@ -165,7 +176,7 @@
         .timeline-content {
             width: 45%;
             padding: 1.5rem;
-            background: #fff;
+            background: var(--dark-color);
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
@@ -190,7 +201,7 @@
         }
         
         .timeline-content h3 {
-            color: var(--primary-color);
+            color: var(--light-color);
             margin-bottom: 1rem;
             font-weight: 600;
         }
@@ -768,22 +779,22 @@
                 Pagalan Chronicles.</p>
 
             <div class="social-links-large fade-up">
-                <a href="https://www.facebook.com/thepagalanchronicles" target="_blank" class="social-btn">
+                <a href="https://www.facebook.com/andy.stonehold?locale=en_GB" target="_blank" class="social-btn">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
                 <a href="https://www.instagram.com/thepagalanchronicles" target="_blank" class="social-btn">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
-                <a href="https://twitter.com/pagalanbooks" target="_blank" class="social-btn">
+                <a href="https://www.instagram.com/andrewhoulston232/profilecard/?igsh=MnIzc2F3ZzNkanpz" target="_blank" class="social-btn">
                     <i class="fab fa-x-twitter"></i> X/Twitter
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="subscribe-section" id="subscribe">
+    <section class="subscribe-section" id="subscribe" style="background: var(--dark-color);">
         <div class="container">
-            <h2 class="section-title fade-up">Join the Adventure</h2>
+            <h2 class="section-title fade-up" style="color: white;">Join the Adventure</h2>
             <p class="fade-up">Subscribe to receive updates, author messages, and be the first to know about new releases in The Pagalan
                 Chronicles series.</p>
 

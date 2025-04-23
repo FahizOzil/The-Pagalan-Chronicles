@@ -179,6 +179,13 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
+        .book-info .btn{
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #b17d1c 100%) !important; 
+            align-self: center !important;
+            }
+            .book-info h3{
+                color : white !important;
+            }
         /* Animated Timeline Section */
         .series-timeline {
             padding: 100px 0;
@@ -332,7 +339,7 @@
         .chapter-container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: rgba(235, 232, 232, 0.9);
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             padding: 40px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
@@ -345,14 +352,14 @@
             font-family: 'Crimson Text', serif;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #333;
+            color: #a3a0a0;
         }
 
         .page-content h4 {
             font-family: 'Cinzel', serif;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
+            color: var(--light-color);
         }
 
         .page-turner {
@@ -471,6 +478,7 @@
             line-height: 1.7;
             font-style: italic;
             margin-bottom: 1.5rem;
+            color: white;
         }
 
         .testimonial-author {
@@ -557,6 +565,7 @@
         .countdown-section {
             padding: 100px 0;
             background: linear-gradient(to bottom, #090806, #090816);
+            color: white;
             position: relative;
         }
 
@@ -642,10 +651,208 @@
 
 
             /* book show case  */
-            .book-info .btn{
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #050913 100%) !important; 
-            }
+           
         }
+    </style>
+
+    <style>
+        /* XL screens (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .book-card-3d {
+        height: 500px;
+        width: 350px;
+    }
+}
+
+/* Large screens (992px to 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .book-card-3d {
+        height: 450px;
+        width: 320px;
+    }
+    
+    .page-title {
+        font-size: 4.5rem;
+    }
+}
+
+/* Medium screens (768px to 991px) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .banner-content {
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 3.5rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .book-card-3d {
+        height: 400px;
+        width: 280px;
+    }
+    
+    .timeline-container {
+        padding: 0 20px;
+    }
+    
+    .testimonial-item {
+        margin-bottom: 30px;
+    }
+    
+    .subscription-box {
+        padding: 30px;
+    }
+}
+
+/* Small screens (576px to 767px) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .page-banner {
+        min-height: 80vh;
+    }
+    
+    .page-title {
+        font-size: 2.8rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .banner-cta .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .banner-cta .btn-outline-light {
+        margin-left: 0 !important;
+    }
+    
+    .book-card-3d {
+        height: 350px;
+        width: 250px;
+        margin: 0 auto 30px;
+    }
+    
+    .chapter-container {
+        padding: 20px;
+    }
+    
+    .book-page {
+        min-height: auto;
+    }
+    
+    .countdown-timer {
+        flex-wrap: wrap;
+    }
+    
+    .time-block {
+        flex: 0 0 calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+/* Extra small screens (575px and down) */
+@media (max-width: 575px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .book-card-3d {
+        height: 300px;
+        width: 220px;
+    }
+    
+    .book-spine-title {
+        font-size: 1.2rem;
+        bottom: 100px;
+    }
+    
+    .timeline-content {
+        padding: 15px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .subscription-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .subscribe-form input {
+        height: 50px;
+    }
+    
+    .subscribe-form button {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .book-card-3d:hover {
+        transform: none;
+    }
+    
+    .book-card-3d {
+        transform: rotateY(15deg);
+    }
+    
+    .hotspot-info {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .page-banner {
+        min-height: 100vh;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .banner-cta {
+        margin-top: 1rem;
+    }
+}
+
+/* High-DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .book-cover img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
     </style>
 @endsection
 
@@ -756,53 +963,11 @@
                     </div>
                 </div>
                 <div class="mt-5">
-                    <a href="#preorder" class="btn btn-lg btn-light">Pre-order Now</a>
+                    <a href="#preorder" class="btn btn-lg" style="background:#b17d1c;">Pre-order Now</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Immersive World Map Section -->
-    {{-- <section class="interactive-map-container" id="world">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Explore The World of Pagalan</h2>
-            <div class="map-wrapper" data-aos="zoom-in">
-                <div class="map-overlay"></div>
-                <img src="{{ asset('images/map/.jpg') }}" class="img-fluid" alt="Map of Pagalan">
-
-                <!-- Enhanced Map Hotspots -->
-                <div class="map-hotspot" style="top: 25%; left: 30%;" data-location="Morganuke">
-                    <div class="hotspot-dot"></div>
-                    <div class="hotspot-info">
-                        <h5>Morganuke Forest</h5>
-                        <p>The ancient, mystical forest where our story begins. Home to ancient secrets and magical beings.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="map-hotspot" style="top: 45%; left: 60%;" data-location="Denesthea">
-                    <div class="hotspot-dot"></div>
-                    <div class="hotspot-info">
-                        <h5>Denesthea</h5>
-                        <p>The legendary hidden land sought by our heroes, said to contain knowledge that could change the
-                            fate of Pagalan forever.</p>
-                    </div>
-                </div>
-
-                <div class="map-hotspot" style="top: 65%; left: 40%;" data-location="Ebon Citadel">
-                    <div class="hotspot-dot"></div>
-                    <div class="hotspot-info">
-                        <h5>Ebon Citadel</h5>
-                        <p>The foreboding fortress of the Dark Mage, shrouded in perpetual twilight and guarded by forces
-                            beyond mortal understanding.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-primary btn-lg">Download HD Map (Free)</a>
-            </div>
-        </div>
-    </section> --}}
 
     <!-- Enhanced Chapter Preview -->
     <section class="chapter-preview-section" id="preview">
@@ -840,7 +1005,7 @@
     <!-- Testimonials -->
     <section class="testimonials py-5">
         <div class="container">
-            <h2 class="section-title text-center mb-5" data-aos="fade-up">Reader Reactions</h2>
+            <h2 class="section-title text-center mb-5 " data-aos="fade-up" style="color:white;">Reader Reactions</h2>
             <div class="testimonial-slider" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-4 mb-4">
@@ -981,4 +1146,106 @@
         });
     </script>
 
+<script>
+    // Touch event handlers for 3D book cards
+document.querySelectorAll('.book-card-3d').forEach(card => {
+    let touching = false;
+    let startAngle = 15;
+    
+    card.addEventListener('touchstart', (e) => {
+        touching = true;
+        const touch = e.touches[0];
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const touchX = touch.clientX;
+        const ratio = (touchX - centerX) / (rect.width / 2);
+        const angle = startAngle + (ratio * 20);
+        
+        card.style.transform = `rotateY(${angle}deg)`;
+    });
+    
+    card.addEventListener('touchmove', (e) => {
+        if (!touching) return;
+        
+        const touch = e.touches[0];
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const touchX = touch.clientX;
+        const ratio = (touchX - centerX) / (rect.width / 2);
+        const angle = startAngle + (ratio * 20);
+        
+        card.style.transform = `rotateY(${angle}deg)`;
+    });
+    
+    card.addEventListener('touchend', () => {
+        touching = false;
+        card.style.transform = `rotateY(${startAngle}deg)`;
+    });
+});
+
+// Responsive navigation for timeline
+const timelineItems = document.querySelectorAll('.timeline-item');
+if (window.innerWidth <= 991) {
+    timelineItems.forEach(item => {
+        item.classList.remove('timeline-left', 'timeline-right');
+    });
+}
+
+// Responsive handling for countdown timer
+const countdownTimer = document.querySelector('.countdown-timer');
+function adjustCountdownLayout() {
+    if (window.innerWidth <= 767) {
+        countdownTimer.style.flexWrap = 'wrap';
+        document.querySelectorAll('.time-block').forEach(block => {
+            block.style.flex = '0 0 calc(50% - 20px)';
+            block.style.marginBottom = '20px';
+        });
+    } else {
+        countdownTimer.style.flexWrap = 'nowrap';
+        document.querySelectorAll('.time-block').forEach(block => {
+            block.style.flex = '1';
+            block.style.marginBottom = '0';
+        });
+    }
+}
+
+// Initialize and handle resize
+window.addEventListener('load', adjustCountdownLayout);
+window.addEventListener('resize', adjustCountdownLayout);
+
+// Optimize animations for mobile
+if (window.innerWidth <= 767) {
+    document.querySelectorAll('[data-aos]').forEach(element => {
+        element.setAttribute('data-aos-duration', '800');
+    });
+}
+
+// Handle mobile menu interactions
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.navbar-toggler');
+    const navigation = document.querySelector('.navbar-collapse');
+    
+    if (menuToggle && navigation) {
+        menuToggle.addEventListener('click', function() {
+            if (navigation.classList.contains('show')) {
+                navigation.style.maxHeight = '0';
+                setTimeout(() => {
+                    navigation.classList.remove('show');
+                }, 300);
+            } else {
+                navigation.classList.add('show');
+                navigation.style.maxHeight = navigation.scrollHeight + 'px';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navigation.contains(e.target) && !menuToggle.contains(e.target)) {
+                navigation.classList.remove('show');
+                navigation.style.maxHeight = '0';
+            }
+        });
+    }
+});
+</script>
 @endsection

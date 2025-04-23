@@ -1,12 +1,70 @@
 /* public/css/app.css */
+    /* Loading Animation */
+    /* .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--background-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loading-spinner {
+        width: 80px;
+        height: 80px;
+        position: relative;
+    }
+
+    .loading-spinner:before,
+    .loading-spinner:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        border: 4px solid transparent;
+        border-top-color: var(--primary-color);
+    }
+
+    .loading-spinner:before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        animation: spin 2s linear infinite;
+    }
+
+    .loading-spinner:after {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-top-color: var(--secondary-color);
+        animation: spin 1.5s linear infinite reverse;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    } */
+
 
 /* Global Styles & Variables */
 :root {
-    --primary-color: #4a2c82; /* Purple theme for fantasy */
+    --primary-color: #b97b06; /* Purple theme for fantasy */
     --secondary-color: #1b78a7; /* Gold accent */
     --accent-color: #ffb81c;
     --dark-color: #1e1e2e;
     --light-color: #f8f9fa;
+    --subtitle-color : #e79120;
     --text-color: #333;
     --heading-font: 'Cinzel', serif;
     --body-font: 'Lato', sans-serif;
@@ -30,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 
  /* Enchanted Banner Section */
  .page-banner {
-    background: linear-gradient(to bottom, rgba(28, 28, 60, 0.8), rgba(8, 8, 8, 0.9)), url("{{ asset('images/pagalan-banner.jpg') }}");
+    background: linear-gradient(to bottom, rgba(28, 28, 60, 0.8), rgba(8, 8, 8, 0.9)), url("{{ asset('images/image.jpg') }}");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -89,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 section {
@@ -562,47 +620,6 @@ section {
 
 /* new one  */
 
-:root {
-    /* Base Colors */
-    --bg-primary: #1e1e2e;         /* Main background */
-    --bg-secondary: #292938;       /* Secondary background, cards, containers */
-    --bg-tertiary: #34344a;        /* Tertiary background, form elements */
-    
-    /* Text Colors */
-    --text-primary: #f8f9fa;       /* Primary text */
-    --text-secondary: #d0d0d0;     /* Secondary text, less emphasis */
-    --text-muted: #9b9bb0;         /* Muted text, placeholders */
-    
-    /* Accent Colors */
-    --accent-primary: #4a2c82;     /* Primary accent, buttons, highlights */
-    --accent-primary-hover: #5d3d95; /* Hover state for primary accent */
-    --accent-secondary: #f2c94c;   /* Secondary accent, important elements */
-    --accent-tertiary: #ffb81c;    /* Tertiary accent, call to actions */
-    
-    /* Status Colors */
-    --success: #2ecc71;            /* Success messages/states */
-    --warning: #f39c12;            /* Warning messages/states */
-    --error: #e74c3c;              /* Error messages/states */
-    --info: #3498db;               /* Information messages/states */
-    
-    /* Border Colors */
-    --border-light: #44445a;       /* Light borders */
-    --border-dark: #222233;        /* Dark borders */
-    
-    /* Shadow Effects */
-    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
-    --shadow-hard: 0 10px 20px rgba(0, 0, 0, 0.2);
-    
-    /* Typography */
-    --heading-font: 'Cinzel', serif;
-    --body-font: 'Lato', sans-serif;
-    
-    /* Transitions */
-    --transition-fast: all 0.2s ease;
-    --transition-medium: all 0.3s ease;
-    --transition-slow: all 0.5s ease;
-  }
   
   /* Basic element styling */
   body {
@@ -724,14 +741,44 @@ section {
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: var(--color-yellow-700);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
+    background: var(--primary-color);
     border-radius: 5px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-primary-hover);
+    background: var(--accent-color);
   }
+
+
+
+  /* JUST FOR CHECK  */
+
+  .page-title {
+    font-size: 5.5rem; /* Default font size */
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 4rem !important; /* Adjust for tablets and small screens */
+    }
+}
+
+/* Medium screens */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2rem !important; 
+        margin-top: 162px;/* Adjust for mobile devices */
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .page-title {
+        font-size: 6rem !important; /* Larger font size for big screens */
+    }
+}

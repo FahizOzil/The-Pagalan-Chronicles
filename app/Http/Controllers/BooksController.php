@@ -41,4 +41,10 @@ class BooksController extends Controller
         $characters =  (object) $characters;
         return view('books.show', compact('book' , 'characters'));
     }
+
+    public function buyNow()
+    {
+        return view('buynow');
+    }
+    
 }
