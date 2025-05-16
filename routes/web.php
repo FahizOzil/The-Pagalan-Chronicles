@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BooksController;
@@ -30,15 +31,15 @@ Route::get('/author', [AuthorController::class, 'index'])->name('author');
 
 // Contact Page
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.submit');
 
 // Subscribe Functionality
-Route::post('/subscribe', [SubscribeController::class, 'store'])->name('subscribe');
+Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
 
 //audiobook
-Route::get('/audiobook', function () {
-    return view('pages.audiobook');
-})->name('audiobooks');
+// Route::get('/audiobook', function () {
+//     return view('pages.audiobook');
+// })->name('audiobooks');
 
 // Optional Blog/News Section
 // Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');

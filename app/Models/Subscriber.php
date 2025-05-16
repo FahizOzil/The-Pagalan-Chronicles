@@ -9,7 +9,14 @@ class Subscriber extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['email', 'name'];
+    protected $fillable = [
+        'email',
+        'name',
+        'is_active',
+        'source'
+    ];
     
-    protected $dates = ['subscribed_at'];
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
 }

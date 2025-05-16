@@ -16,8 +16,7 @@
     --body-font: 'Lato', sans-serif;
     --transition: all 0.3s ease;
 }
-
-  
+ 
 </style>
 
 @endsection

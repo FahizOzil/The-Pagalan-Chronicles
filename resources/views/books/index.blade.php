@@ -163,7 +163,7 @@
             height: 100%;
             left: 0;
             transform: rotateY(90deg) translateZ(25px);
-            background: var(--primary-color);
+            background: var(--light-color);
             box-shadow: inset -5px 0 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -329,60 +329,156 @@
             visibility: visible;
         }
 
-        /* Immersive Chapter Preview */
-        .chapter-preview-section {
-            padding: 100px 0;
-            background: url("{{ asset('images/books/book1.jpg') }}") center center;
-            position: relative;
-        }
-
+        /* Enhanced Chapter Preview Styles */
+    .chapter-preview-section {
+        padding: 100px 0;
+        background: url("{{ asset('images/books/book1.jpg') }}") center center;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .chapter-preview-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+    }
+    
+    .chapter-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(16, 14, 23, 0.85);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        position: relative;
+        border: 1px solid rgba(255, 184, 28, 0.3);
+    }
+    
+    .book-page {
+        position: relative;
+        min-height: 500px;
+        font-family: 'Crimson Text', serif;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #c3c0c0;
+    }
+    
+    .page-content {
+        transition: all 0.5s ease;
+    }
+    
+    .page-content h4 {
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--light-color);
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 184, 28, 0.3);
+        padding-bottom: 1rem;
+    }
+    
+    .page-content p {
+        margin-bottom: 1.5rem;
+        opacity: 0.7;
+        transition: all 0.8s ease;
+        transform: translateY(10px);
+    }
+    
+    /* Visual effect for active paragraph */
+    .page-content p.active-paragraph {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 5px rgba(255, 184, 28, 0.3);
+    }
+    
+    /* New content section styling */
+    .new-content-section {
+        transition: opacity 0.8s ease;
+    }
+    
+    /* Prevent content jumping */
+    .page-content {
+        transition: height 0.5s ease;
+    }
+    
+    .page-turner {
+        position: relative;
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 184, 28, 0.3);
+    }
+    
+    .page-turner .btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    
+    .page-turner .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .page-turner .btn-warning {
+        background: linear-gradient(135deg, #f5a623, #b17d1c);
+        color: white;
+    }
+    
+    /* Scrollbar styling for chapter container */
+    .book-page::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .book-page::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .book-page::-webkit-scrollbar-thumb {
+        background: rgba(255, 184, 28, 0.5);
+        border-radius: 10px;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
         .chapter-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            position: relative;
+            padding: 25px;
         }
-
+        
         .book-page {
-            position: relative;
-            min-height: 500px;
-            font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #a3a0a0;
+            min-height: 400px;
+            font-size: 1rem;
         }
-
+        
         .page-content h4 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--light-color);
+            font-size: 1.6rem;
         }
-
-        .page-turner {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            z-index: 2;
+    }
+    
+    @media (max-width: 576px) {
+        .chapter-container {
+            padding: 20px;
         }
-
-        .page-turner .btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        
+        .book-page {
+            min-height: 350px;
+            font-size: 0.95rem;
         }
-
-        .page-turner .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        
+        .page-content h4 {
+            font-size: 1.4rem;
         }
+    }
 
         /* Animated Character Cards */
         /* .character-profiles {
@@ -440,127 +536,7 @@
                 margin-bottom: 0.75rem;
             } */
 
-        /* Enhanced Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            background: var(--dark-color) !important;
-        }
-
-        .testimonials .section-title {
-            color: var(--dark-color);
-        }
-
-        .swiper-testimonials {
-            padding: 30px 0;
-        }
-
-        .testimonial-item {
-            background: black;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .testimonial-item .stars {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-
-        /* Fancy Subscription Form */
-        .book-subscription {
-            padding: 100px 0;
-            background: url("{{ asset('images/books/book2.jpg') }}") center center;
-            background-size: cover;
-            position: relative;
-        }
-
-        .book-subscription::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(28, 28, 60, 0.8);
-        }
-
-        .subscription-box {
-            position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .subscription-box h3 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .subscription-box p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .subscribe-form {
-            position: relative;
-        }
-
-        .subscribe-form input {
-            height: 60px;
-            padding-left: 20px;
-            border-radius: 30px;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            font-size: 1rem;
-        }
-
-        .subscribe-form button {
-            height: 50px;
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            border-radius: 25px;
-            padding: 0 30px;
-            background: var(--accent-color);
-            color: var(--dark-color);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .subscribe-form button:hover {
-            background: #ffc93c;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        }
-
-
-
+       
         /* Countdown Timer */
         .countdown-section {
             padding: 100px 0;
@@ -872,7 +848,7 @@
     <!-- 3D Book Display Section -->
     <section class="book-display-3d" id="books">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">The Epic Trilogy</h2>
+            <h2 class="text-center mb-5 text-white" data-aos="fade-up">The Epic Trilogy</h2>
             <div class="row">
 
                 @foreach ($books as $key => $book)
@@ -943,7 +919,7 @@
     <section class="countdown-section py-5">
         <div class="container">
             <div class="release-countdown text-center py-5" data-aos="zoom-in">
-                <h3 class="mb-4">First Book Release In:</h3>
+                <h3 class="mb-4">New Book Release In:</h3>
                 <div class="countdown-timer d-flex justify-content-center gap-4 mt-4">
                     <div class="time-block">
                         <div class="time-value" id="countdown-days">00</div>
@@ -969,79 +945,31 @@
         </div>
     </section>
 
-    <!-- Enhanced Chapter Preview -->
-    <section class="chapter-preview-section" id="preview">
-        <div class="container">
-            <h2 class="section-title text-center mb-5" data-aos="fade-up">Preview First Chapter</h2>
-            <div class="chapter-preview" data-aos="fade-up">
-                <div class="chapter-container">
-                    <div class="book-page">
-                        <div class="page-content">
-                            <h4>Chapter 1: The Beginning</h4>
-                            <p>The mist hung low over Morganuke Forest as dawn broke, casting an ethereal glow across the
-                                ancient trees. Elian adjusted the pack on his shoulders, his eyes scanning the path ahead.
-                                The Council's warning echoed in his mind: "Find the Roots before the solstice, or all will
-                                be lost."</p>
-                            <p>He had spent three years preparing for this journey, studying the old texts, memorizing the
-                                maps, training his body for the trials ahead. But nothing could prepare him for what awaited
-                                in the depths of Morganuke.</p>
-                            <p>As he stepped deeper into the forest, the air thickened with magic, and the trees whispered
-                                secrets of ages past. Elian felt a shiver run down his spine. This was not just a quest for
-                                knowledge; it was a test of his very soul.</p>
-                            <p>With each step, he could feel the weight of destiny pressing down on him. The fate of Pagalan
-                                rested on his shoulders, and he was determined to uncover the truth hidden within the roots
-                                of Morganuke.</p>
-                        </div>
-                        <div class="page-turner text-center mt-4">
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
+   
+<!-- Enhanced Chapter Preview Section -->
+<section class="chapter-preview-section" id="preview">
+    <div class="container">
+        <h2 class="section-title text-center mb-5 text-white" data-aos="fade-up">Preview First Chapter</h2>
+        <div class="chapter-preview" data-aos="fade-up">
+            <div class="chapter-container">
+                <div class="book-page">
+                    <div class="page-content">
+                        <!-- Dynamic content will be loaded here by JavaScript -->
+                    </div>
+                    <div class="page-turner text-center mt-4">
+                        <!-- Dynamic buttons will be inserted here by JavaScript -->
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     {{-- testimonials section --}}
     <!-- Testimonials -->
-    <section class="testimonials py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5 " data-aos="fade-up" style="color:white;">Reader Reactions</h2>
-            <div class="testimonial-slider" data-aos="fade-up">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-item text-center p-4">
-                            <div class="stars mb-3">
-                                ★★★★★
-                            </div>
-                            <p class="testimonial-text">"I couldn't put it down. The world of Pagalan feels so real and
-                                immersive. Can't wait for the next book!"</p>
-                            <div class="testimonial-author">- Sarah J.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-item text-center p-4">
-                            <div class="stars mb-3">
-                                ★★★★★
-                            </div>
-                            <p class="testimonial-text">"The characters are so well developed. I found myself emotionally
-                                invested in their journey from the very first chapter."</p>
-                            <div class="testimonial-author">- Michael T.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-item text-center p-4">
-                            <div class="stars mb-3">
-                                ★★★★★
-                            </div>
-                            <p class="testimonial-text">"A perfect blend of fantasy and adventure. The Pagalan Chronicles
-                                has everything I look for in a great series."</p>
-                            <div class="testimonial-author">- Elena R.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-readers-reactions /> 
+
+        <!-- Subscription Section -->
+<x-adventure-subscribe /> 
 @endsection
 
 @section('scripts')
@@ -1246,6 +1174,189 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+</script>
+
+{{-- ChapterPreview   --}}
+<script>
+   // Enhanced Chapter Preview with Dynamic Content Loading
+document.addEventListener('DOMContentLoaded', function() {
+    // Chapter content sections
+    const chapterContent = [
+        {
+            title: "Chapter 1: The Beginning",
+            content: `<p>The mist hung low over Morganuke Forest as dawn broke, casting an ethereal glow across the ancient trees. Elian adjusted the pack on his shoulders, his eyes scanning the path ahead. The Council's warning echoed in his mind: "Find the Roots before the solstice, or all will be lost."</p>
+                     <p>He had spent three years preparing for this journey, studying the old texts, memorizing the maps, training his body for the trials ahead. But nothing could prepare him for what awaited in the depths of Morganuke.</p>`
+        },
+        {
+            content: `<p>As he stepped deeper into the forest, the air thickened with magic, and the trees whispered secrets of ages past. Elian felt a shiver run down his spine. This was not just a quest for knowledge; it was a test of his very soul.</p>
+                     <p>With each step, he could feel the weight of destiny pressing down on him. The fate of Pagalan rested on his shoulders, and he was determined to uncover the truth hidden within the roots of Morganuke.</p>`
+        },
+        {
+            content: `<p>A distant howl echoed through the trees, causing Elian to freeze in his tracks. The Shadowbeasts were hunting tonight. He pulled his cloak tighter, seeking shelter beneath an ancient oak.</p>
+                     <p>"You shouldn't be here, traveler," came a voice from the shadows. Elian spun around, reaching for his blade. An old woman stood before him, her eyes glowing with an unnatural blue light.</p>
+                     <p>"The Roots cannot be found by those who seek them," she continued. "Only by those who are worthy."</p>`
+        }
+    ];
+
+    // Get DOM elements
+    const pageContent = document.querySelector('.page-content');
+    const pageTurner = document.querySelector('.page-turner');
+    
+    // Safety check - ensure elements exist before proceeding
+    if (!pageContent || !pageTurner) {
+        console.error('Required chapter preview elements not found');
+        return;
+    }
+    
+    // Initialize chapter view with only the first section
+    let currentSection = 0;
+    
+    // Set initial content
+    function initializeChapter() {
+        // Create initial container with title
+        const initialContainer = document.createElement('div');
+        initialContainer.innerHTML = `<h4>${chapterContent[0].title}</h4>`;
+        pageContent.appendChild(initialContainer);
+        
+        // Create container for first paragraphs with fade-in effect
+        const firstContentSection = document.createElement('div');
+        firstContentSection.className = 'new-content-section';
+        firstContentSection.style.opacity = '0';
+        firstContentSection.innerHTML = chapterContent[0].content;
+        pageContent.appendChild(firstContentSection);
+        
+        // Fade in the content
+        setTimeout(() => {
+            firstContentSection.style.transition = 'opacity 0.8s ease';
+            firstContentSection.style.opacity = '1';
+            
+            // Add active class to paragraphs
+            setTimeout(() => {
+                firstContentSection.querySelectorAll('p').forEach(p => {
+                    p.classList.add('active-paragraph');
+                });
+            }, 500);
+        }, 300);
+        
+        // Create Read More button
+        updateButton("Read More", loadNextSection);
+    }
+    
+    // Function to load next section
+    function loadNextSection() {
+        // Mark the current position relative to the bottom of the content
+        const lastElement = pageContent.lastElementChild;
+        const relativePosition = window.scrollY + window.innerHeight - lastElement.offsetTop;
+        
+        currentSection++;
+        
+        // Create a container for the new content to enable fade-in effect
+        const newContentContainer = document.createElement('div');
+        newContentContainer.className = 'new-content-section';
+        newContentContainer.style.opacity = '0';
+        newContentContainer.innerHTML = chapterContent[currentSection].content;
+        
+        // Append the container
+        pageContent.appendChild(newContentContainer);
+        
+        // Calculate new position to maintain relative view
+        const newLastElement = pageContent.lastElementChild;
+        const newPosition = newLastElement.offsetTop - window.innerHeight + relativePosition;
+        
+        // Scroll to maintain position
+        window.scrollTo(0, newPosition);
+        
+        // Fade in the new content
+        setTimeout(() => {
+            newContentContainer.style.transition = 'opacity 0.8s ease';
+            newContentContainer.style.opacity = '1';
+            
+            // Smooth scroll to show the new content
+            setTimeout(() => {
+                const targetY = newContentContainer.offsetTop - 100; // Show more context above new content
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
+            }, 200);
+        }, 50);
+        
+        // Add active-paragraph class to new paragraphs after they're visible
+        setTimeout(() => {
+            newContentContainer.querySelectorAll('p').forEach(p => {
+                p.classList.add('active-paragraph');
+            });
+        }, 800);
+        
+        // If we're at the last section, show Amazon button
+        if (currentSection >= chapterContent.length - 1) {
+            updateButton("Buy on Amazon", redirectToAmazon);
+        }
+    }
+    
+    // Function to update the button text and action
+    function updateButton(text, action) {
+        // Clear existing buttons
+        pageTurner.innerHTML = '';
+        
+        // Create new button
+        const btn = document.createElement('a');
+        btn.href = "javascript:void(0)"; // Use javascript:void(0) instead of # to prevent scroll jump
+        btn.className = "btn";
+        
+        if (text === "Buy on Amazon") {
+            btn.className = "btn btn-warning";
+            btn.innerHTML = '<i class="fa fa-shopping-cart"></i> ' + text;
+        } else {
+            btn.className = "btn btn-primary";
+            btn.textContent = text;
+        }
+        
+        // Add animation class
+        btn.classList.add('animate__animated', 'animate__pulse', 'animate__infinite');
+        
+        // Add event listener with explicit preventDefault
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            e.stopPropagation(); // Stop event propagation
+            action();
+            return false; // Extra precaution
+        });
+        
+        // Add to page turner
+        pageTurner.appendChild(btn);
+    }
+    
+    // Function to redirect to Amazon
+    function redirectToAmazon() {
+        // You can replace this URL with your actual Amazon book link
+        window.open('https://www.amazon.com/dp/PagalanChroniclesBook1', '_blank');
+    }
+    
+    // Add visual effects when scrolling through chapter
+    function addReadingEffects() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active-paragraph');
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        // Observe all paragraphs
+        document.querySelectorAll('.page-content p').forEach(p => {
+            observer.observe(p);
+        });
+    }
+    
+    // Initialize the chapter preview
+    initializeChapter();
+    
+    // Add scroll effects with a slight delay
+    setTimeout(addReadingEffects, 500);
 });
 </script>
 @endsection

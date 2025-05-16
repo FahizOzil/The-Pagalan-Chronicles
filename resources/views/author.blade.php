@@ -10,7 +10,7 @@
             padding: 5rem 0;
             background: linear-gradient(to right, #110a0a, #0f0909);
         }
-        
+
         .page-banner {
             position: relative;
             background: url('{{ asset('images/characters/panel.jpg') }}') no-repeat center center;
@@ -24,7 +24,7 @@
             overflow: hidden;
             margin-top: 124px;
         }
-        
+
         .page-banner::before {
             content: '';
             position: absolute;
@@ -32,19 +32,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
         }
-        
+
         .page-banner .container {
             position: relative;
             z-index: 2;
         }
-        
+
         .page-banner h1 {
             font-size: 4rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
             letter-spacing: 2px;
         }
 
@@ -54,12 +54,13 @@
             margin-bottom: 0.5rem;
             position: relative;
             display: inline-block;
-            color:white;
+            color: white;
         }
-        .bio-content{
-            color:white;
+
+        .bio-content {
+            color: white;
         }
-        
+
         .author-bio h2::after {
             content: '';
             position: absolute;
@@ -69,34 +70,37 @@
             height: 3px;
             background: linear-gradient(to right, #141118, var(--primary-color));
         }
-        .section-title{
-            color:white !important;
+
+        .section-title {
+            color: white !important;
         }
-        .timeline-content p , .timeline-content span{
-            color : white;
+
+        .timeline-content p,
+        .timeline-content span {
+            color: white;
         }
-        
+
         .author-bio .lead {
             font-size: 1.4rem;
             color: #555;
             margin-bottom: 1.5rem;
         }
-        
+
         .author-image {
             position: relative;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-        
+
         .author-image img {
             transition: transform 0.5s ease;
         }
-        
+
         .author-image:hover img {
             transform: scale(1.03);
         }
-        
+
         .author-image::after {
             content: '';
             position: absolute;
@@ -104,7 +108,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
 
@@ -115,7 +119,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .author-journey::before {
             content: '';
             position: absolute;
@@ -126,14 +130,14 @@
             background: url('{{ asset('images/image.jpg') }}') repeat;
             opacity: 0.1;
         }
-        
+
         .timeline {
             position: relative;
             max-width: 1000px;
             margin: 3rem auto;
             padding: 2rem 0;
         }
-        
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -141,25 +145,25 @@
             left: 50%;
             width: 3px;
             height: 100%;
-            background: linear-gradient(to bottom, black , white);
+            background: linear-gradient(to bottom, black, white);
             transform: translateX(-50%);
         }
-        
+
         .timeline-item {
             position: relative;
             margin-bottom: 3rem;
             width: 100%;
             display: flex;
         }
-        
+
         .timeline-item:nth-child(odd) {
             flex-direction: row;
         }
-        
+
         .timeline-item:nth-child(even) {
             flex-direction: row-reverse;
         }
-        
+
         .timeline-dot {
             position: absolute;
             left: 50%;
@@ -172,16 +176,16 @@
             border: 3px solid #fff;
             box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.2);
         }
-        
+
         .timeline-content {
             width: 45%;
             padding: 1.5rem;
             background: var(--dark-color);
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-        
+
         .timeline-content::after {
             content: '';
             position: absolute;
@@ -191,15 +195,15 @@
             background: #fff;
             transform: rotate(45deg);
         }
-        
+
         .timeline-item:nth-child(odd) .timeline-content::after {
             right: -10px;
         }
-        
+
         .timeline-item:nth-child(even) .timeline-content::after {
             left: -10px;
         }
-        
+
         .timeline-content h3 {
             color: var(--light-color);
             margin-bottom: 1rem;
@@ -211,15 +215,15 @@
             padding: 6rem 0;
             background: linear-gradient(135deg, #050708 0%, #090c0f 100%);
         }
-        
+
         .accordion-item {
             border: none;
             margin-bottom: 1rem;
             border-radius: 10px !important;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .accordion-button {
             padding: 1.25rem 1.5rem;
             font-weight: 600;
@@ -227,16 +231,16 @@
             background: #fff;
             color: #333;
         }
-        
+
         .accordion-button:not(.collapsed) {
-            background: linear-gradient(to right, black , white);
+            background: linear-gradient(to right, black, white);
             color: #fff;
         }
-        
+
         .accordion-button:focus {
             box-shadow: none;
         }
-        
+
         .accordion-body {
             padding: 1.5rem;
             background: #fff;
@@ -250,7 +254,7 @@
             position: relative;
             color: #fff;
         }
-        
+
         .author-connect::before {
             content: '';
             position: absolute;
@@ -258,14 +262,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgb(19, 16, 16) , rgb(12, 7, 7));
+            background: linear-gradient(135deg, rgb(19, 16, 16), rgb(12, 7, 7));
         }
-        
+
         .author-connect .container {
             position: relative;
             z-index: 2;
         }
-        
+
         .section-title {
             position: relative;
             padding-bottom: 1rem;
@@ -273,7 +277,7 @@
             text-align: center;
             font-weight: 700;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -282,9 +286,9 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(to right, black , white);
+            background: linear-gradient(to right, black, white);
         }
-        
+
         .author-connect .section-title::after {
             background: #fff;
         }
@@ -293,7 +297,7 @@
         .social-links-large {
             margin-top: 2rem;
         }
-        
+
         .social-links-large .social-btn {
             display: inline-block;
             margin: 0.5rem;
@@ -306,65 +310,19 @@
             font-weight: 500;
             border: 1px solid var(--primary-color);
         }
-        
+
         .social-links-large .social-btn:hover {
             background: var(--primary-color);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             text-decoration: none;
         }
-        
+
         .social-links-large .social-btn i {
             margin-right: 8px;
         }
 
-        /* Subscribe section styling */
-        .subscribe-section {
-            padding: 6rem 0;
-            background: linear-gradient(to right, #f9f9f9, #ffffff);
-            text-align: center;
-        }
-        
-        .subscribe-form {
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .subscribe-form .form-group {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .subscribe-form input[type="email"] {
-            flex-grow: 1;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            border: 1px solid #ddd;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .subscribe-form input[type="email"]:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.2);
-            outline: none;
-        }
-        
-        .subscribe-form button {
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            background: linear-gradient(to right, black , white);
-            border: none;
-            color: #fff;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .subscribe-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 117, 252, 0.3);
-        }
+    
 
         /* Floating book element */
         .floating-book {
@@ -374,13 +332,21 @@
             top: 100px;
             animation: float 6s ease-in-out infinite;
             z-index: 10;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0) rotate(0deg); }
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
         }
 
         /* Animation classes */
@@ -389,49 +355,49 @@
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .fade-up.active {
             opacity: 1 !important;
             transform: translateY(0);
         }
-        
+
         .fade-in {
             opacity: 0;
             transition: opacity 0.6s ease;
         }
-        
+
         .fade-in.active {
             opacity: 1 !important;
         }
-        
+
         .slide-in-left {
             opacity: 0;
             transform: translateX(-50px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .slide-in-left.active {
             opacity: 1 !important;
             transform: translateX(0);
         }
-        
+
         .slide-in-right {
             opacity: 0;
             transform: translateX(50px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .slide-in-right.active {
             opacity: 1 !important;
             transform: translateX(0);
         }
-        
+
         .scale-in {
             opacity: 0;
             transform: scale(0.8);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .scale-in.active {
             opacity: 1 !important;
             transform: scale(1);
@@ -446,7 +412,7 @@
             color: #fff;
             text-align: center;
         }
-        
+
         .parallax-text .parallax-quote {
             font-size: 2rem;
             font-style: italic;
@@ -454,7 +420,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .parallax-text .author-signature {
             margin-top: 2rem;
             font-size: 1.2rem;
@@ -466,176 +432,177 @@
             .timeline::before {
                 left: 30px;
             }
-            
+
             .timeline-item {
                 flex-direction: row !important;
                 justify-content: flex-start;
             }
-            
+
             .timeline-dot {
                 left: 30px;
             }
-            
+
             .timeline-content {
                 width: calc(100% - 60px);
                 margin-left: 60px;
             }
-            
+
             .timeline-content::after {
                 left: -10px !important;
                 right: auto !important;
             }
         }
-        
+
         @media (max-width: 767px) {
             .page-banner h1 {
                 font-size: 3rem;
             }
-            
+
             .author-bio h2 {
                 font-size: 2rem;
             }
-            
+
             .parallax-text .parallax-quote {
                 font-size: 1.5rem;
             }
-            
+
             .floating-book {
                 display: none;
             }
         }
     </style>
 
-<style>
+    <style>
+        .banner-parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("{{ asset('images/pagalan-banner.jpg') }}") no-repeat center center;
+            background-size: cover;
+            z-index: 0;
+            transform: translateZ(0);
+        }
 
-.banner-parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("{{ asset('images/pagalan-banner.jpg') }}") no-repeat center center;
-    background-size: cover;
-    z-index: 0;
-    transform: translateZ(0);
-}
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
 
-.page-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4));
-    z-index: 1;
-}
+        .page-banner .container {
+            position: relative;
+            z-index: 2;
+        }
 
-.page-banner .container {
-    position: relative;
-    z-index: 2;
-}
+        .page-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.3s;
+        }
 
-.page-title {
-    font-size: 4.5rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.3s;
-}
+        .page-subtitle {
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.6s;
+        }
 
-.page-subtitle {
-    font-size: 1.8rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    font-weight: 300;
-    letter-spacing: 2px;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.6s;
-}
+        .banner-cta {
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.9s;
+        }
 
-.banner-cta {
-    transform: translateY(20px);
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.9s;
-}
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-@keyframes fadeInUp {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+        /* Floating magical particles effect */
+        .page-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{{ asset('images/particles.png') }}");
+            background-repeat: repeat;
+            opacity: 0.1;
+            animation: floatingParticles 60s linear infinite;
+            z-index: 1;
+        }
 
-/* Floating magical particles effect */
-.page-banner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("{{ asset('images/particles.png') }}");
-    background-repeat: repeat;
-    opacity: 0.1;
-    animation: floatingParticles 60s linear infinite;
-    z-index: 1;
-}
+        @keyframes floatingParticles {
+            from {
+                background-position: 0 0;
+            }
 
-@keyframes floatingParticles {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
+            to {
+                background-position: 100% 100%;
+            }
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .page-banner {
-        padding: 120px 0 80px;
-    }
-    
-    .page-title {
-        font-size: 3rem;
-    }
-    
-    .page-subtitle {
-        font-size: 1.3rem;
-    }
-    
-    .banner-cta .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-}
-</style>
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-banner {
+                padding: 120px 0 80px;
+            }
+
+            .page-title {
+                font-size: 3rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .banner-cta .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 @endsection
 
 
 
 @section('content')
-     <!-- page-banner HTML -->
-<div class="page-banner">
-    <div class="banner-parallax-bg"></div>
-    <div class="container">
-        <div class="banner-content" data-aos="fade-up">
-            <h1 class="page-title">Andrew Houlston</h1>
-            <p class="page-subtitle">Creator of The Pagalan Chronicles</p>
+    <!-- page-banner HTML -->
+    <div class="page-banner">
+        <div class="banner-parallax-bg"></div>
+        <div class="container">
+            <div class="banner-content" data-aos="fade-up">
+                <h1 class="page-title">Andrew Houlston</h1>
+                <p class="page-subtitle">Creator of The Pagalan Chronicles</p>
+            </div>
         </div>
     </div>
-</div>
 
     <section class="author-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="author-image fade-up">
-                        <img src="{{ asset('images/author/author.jpg') }}" alt="Author Andrew Houlston" class="img-fluid rounded">
+                        <img src="{{ asset('images/author/author.jpg') }}" alt="Author Andrew Houlston"
+                            class="img-fluid rounded">
                     </div>
                 </div>
 
@@ -673,7 +640,8 @@
     <section class="parallax-text">
         <div class="container">
             <div class="parallax-quote fade-in">
-                "Through all the darkness and challenges that life throws at us, there is still a glimmer of light. If we stand together through adversity, that glimmer becomes a beacon that outshines even the bleakest moments."
+                "Through all the darkness and challenges that life throws at us, there is still a glimmer of light. If we
+                stand together through adversity, that glimmer becomes a beacon that outshines even the bleakest moments."
             </div>
             <div class="author-signature fade-in">
                 - Andrew Houlston
@@ -695,7 +663,7 @@
                             'year' => '2005'
                         ],
                         [
-                            'title' => 'First Publication', 
+                            'title' => 'First Publication',
                             'content' => 'After years of development, the first book in The Pagalan Chronicles was published to an enthusiastic audience, drawing readers into a world where magic and technology collide.',
                             'year' => '2018'
                         ],
@@ -760,8 +728,8 @@
                                 {{ $item['q'] }}
                             </button>
                         </h2>
-                        <div id="collapse{{ $index }}"
-                            class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" data-bs-parent="#authorQA">
+                        <div id="collapse{{ $index }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
+                            data-bs-parent="#authorQA">
                             <div class="accordion-body">
                                 <p>{{ $item['a'] }}</p>
                             </div>
@@ -775,7 +743,8 @@
     <section class="author-connect text-center">
         <div class="container">
             <h2 class="section-title fade-up">Connect With Andrew</h2>
-            <p class="fade-up">Follow Andrew Houlston on social media for updates, behind-the-scenes content, and discussions about The
+            <p class="fade-up">Follow Andrew Houlston on social media for updates, behind-the-scenes content, and
+                discussions about The
                 Pagalan Chronicles.</p>
 
             <div class="social-links-large fade-up">
@@ -785,36 +754,25 @@
                 <a href="https://www.instagram.com/thepagalanchronicles" target="_blank" class="social-btn">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
-                <a href="https://www.instagram.com/andrewhoulston232/profilecard/?igsh=MnIzc2F3ZzNkanpz" target="_blank" class="social-btn">
+                <a href="https://www.instagram.com/andrewhoulston232/profilecard/?igsh=MnIzc2F3ZzNkanpz" target="_blank"
+                    class="social-btn">
                     <i class="fab fa-x-twitter"></i> X/Twitter
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="subscribe-section" id="subscribe" style="background: var(--dark-color);">
-        <div class="container">
-            <h2 class="section-title fade-up" style="color: white;">Join the Adventure</h2>
-            <p class="fade-up">Subscribe to receive updates, author messages, and be the first to know about new releases in The Pagalan
-                Chronicles series.</p>
+    <!-- Subscription Section -->
+    <x-adventure-subscribe />
 
-            <form action="{{ route('subscribe') }}" method="POST" class="subscribe-form fade-up">
-                @csrf
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your email address" required class="form-control">
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </div>
-            </form>
-        </div>
-    </section>
 @endsection
 
 @section('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // GSAP animations
             gsap.registerPlugin(ScrollTrigger);
-            
+
             // Hero banner animation
             gsap.to('.page-banner', {
                 scrollTrigger: {
@@ -826,7 +784,7 @@
                 backgroundPosition: '50% 100%',
                 ease: 'none'
             });
-            
+
             // Floating book animation
             gsap.to('.floating-book', {
                 y: 20,
@@ -836,7 +794,7 @@
                 repeat: -1,
                 yoyo: true
             });
-            
+
             // Author image reveal
             gsap.from('.author-image', {
                 scrollTrigger: {
@@ -848,7 +806,7 @@
                 opacity: 0,
                 duration: 1,
             });
-            
+
             // Author bio text reveal
             gsap.from('.author-bio', {
                 scrollTrigger: {
@@ -861,7 +819,7 @@
                 duration: 1,
                 delay: 0.3
             });
-            
+
             // Parallax quote effect
             gsap.to('.parallax-quote', {
                 scrollTrigger: {
@@ -873,10 +831,10 @@
                 y: -50,
                 ease: 'none'
             });
-            
+
             // Reveal animations for elements with classes
             const revealElements = document.querySelectorAll('.fade-up, .fade-in, .slide-in-left, .slide-in-right, .scale-in');
-            
+
             revealElements.forEach(element => {
                 ScrollTrigger.create({
                     trigger: element,
@@ -885,13 +843,13 @@
                     once: true
                 });
             });
-            
+
             // Timeline animation
             const timelineItems = document.querySelectorAll('.timeline-item');
-            
+
             timelineItems.forEach((item, index) => {
                 const delay = index * 0.2;
-                
+
                 gsap.from(item.querySelector('.timeline-dot'), {
                     scrollTrigger: {
                         trigger: item,
@@ -903,7 +861,7 @@
                     duration: 0.6,
                     delay: delay
                 });
-                
+
                 gsap.from(item.querySelector('.timeline-content'), {
                     scrollTrigger: {
                         trigger: item,
@@ -916,10 +874,10 @@
                     delay: delay + 0.2
                 });
             });
-            
+
             // Accordion item reveal
             const accordionItems = document.querySelectorAll('.accordion-item');
-            
+
             accordionItems.forEach((item, index) => {
                 gsap.from(item, {
                     scrollTrigger: {
@@ -933,10 +891,10 @@
                     delay: 0.1 * index
                 });
             });
-            
+
             // Social buttons hover effect
             const socialBtns = document.querySelectorAll('.social-btn');
-            
+
             socialBtns.forEach(btn => {
                 btn.addEventListener('mouseenter', () => {
                     gsap.to(btn, {
@@ -945,7 +903,7 @@
                         ease: 'power2.out'
                     });
                 });
-                
+
                 btn.addEventListener('mouseleave', () => {
                     gsap.to(btn, {
                         y: 0,
@@ -954,7 +912,7 @@
                     });
                 });
             });
-            
+
             // Subscribe form animation
             gsap.from('.subscribe-form', {
                 scrollTrigger: {
@@ -963,17 +921,16 @@
                     toggleActions: 'play none none none'
                 },
                 y: 30,
-                opacity: 0,
                 duration: 0.8,
                 delay: 0.3
             });
-            
+
             // Interactive timeline year display
             const timelineDots = document.querySelectorAll('.timeline-dot');
-            
+
             timelineDots.forEach(dot => {
                 const year = dot.getAttribute('data-year');
-                
+
                 // Create year label
                 const yearLabel = document.createElement('div');
                 yearLabel.classList.add('timeline-year-label');
@@ -987,13 +944,13 @@
                 yearLabel.style.color = 'var(--primary-color);';
                 yearLabel.style.opacity = '0';
                 yearLabel.style.transition = 'opacity 0.3s ease';
-                
+
                 dot.appendChild(yearLabel);
-                
+
                 dot.addEventListener('mouseenter', () => {
                     yearLabel.style.opacity = '1';
                 });
-                
+
                 dot.addEventListener('mouseleave', () => {
                     yearLabel.style.opacity = '0';
                 });
@@ -1001,54 +958,54 @@
         });
     </script>
 
-<script>
-    // Updated JavaScript for page-banner
-document.addEventListener('DOMContentLoaded', function() {
-    // Parallax effect for banner
-    const bannerBg = document.querySelector('.banner-parallax-bg');
-    
-    window.addEventListener('scroll', function() {
-        let scrollPosition = window.pageYOffset;
-        if (bannerBg) {
-            bannerBg.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
-        }
-    });
-    
-    // Magical particles effect (optional)
-    const banner = document.querySelector('.page-banner');
-    if (banner) {
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('magical-particle');
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = (Math.random() * 5) + 's';
-            particle.style.opacity = Math.random() * 0.5;
-            banner.appendChild(particle);
-        }
+    <script>
+        // Updated JavaScript for page-banner
+        document.addEventListener('DOMContentLoaded', function () {
+            // Parallax effect for banner
+            const bannerBg = document.querySelector('.banner-parallax-bg');
 
-        // Add this CSS for the particles
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .magical-particle {
-                position: absolute;
-                width: 3px;
-                height: 3px;
-                background: white;
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 2;
-                animation: float 20s linear infinite;
+            window.addEventListener('scroll', function () {
+                let scrollPosition = window.pageYOffset;
+                if (bannerBg) {
+                    bannerBg.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
+                }
+            });
+
+            // Magical particles effect (optional)
+            const banner = document.querySelector('.page-banner');
+            if (banner) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('magical-particle');
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animationDelay = (Math.random() * 5) + 's';
+                    particle.style.opacity = Math.random() * 0.5;
+                    banner.appendChild(particle);
+                }
+
+                // Add this CSS for the particles
+                const style = document.createElement('style');
+                style.innerHTML = `
+                .magical-particle {
+                    position: absolute;
+                    width: 3px;
+                    height: 3px;
+                    background: white;
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 2;
+                    animation: float 20s linear infinite;
+                }
+
+                @keyframes float {
+                    0% { transform: translateY(0) rotate(0deg); }
+                    50% { transform: translateY(-100px) rotate(180deg); }
+                    100% { transform: translateY(0) rotate(360deg); }
+                }
+            `;
+                document.head.appendChild(style);
             }
-            
-            @keyframes float {
-                0% { transform: translateY(0) rotate(0deg); }
-                50% { transform: translateY(-100px) rotate(180deg); }
-                100% { transform: translateY(0) rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-});
-</script>
+        });
+    </script>
 @endsection

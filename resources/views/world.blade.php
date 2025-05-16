@@ -1105,7 +1105,7 @@ if (document.readyState !== 'loading') {
 @section('styles')
     <style>
         /* Base Variables */
-        :root {
+        /* :root {
             --primary-color: #2c3e50;
             --secondary-color: #e74c3c;
             --accent-color: #3498db;
@@ -1117,7 +1117,7 @@ if (document.readyState !== 'loading') {
             --font-primary: 'Montserrat', sans-serif;
             --font-secondary: 'Cinzel', serif;
             --font-text: 'Open Sans', sans-serif;
-        }
+        } */
 
         /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');

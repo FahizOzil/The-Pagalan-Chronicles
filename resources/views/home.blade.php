@@ -366,7 +366,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, rgba(106, 90, 205, 0), rgba(228, 141, 11 ,1), rgba(106, 90, 205, 0));
+            background: linear-gradient(90deg, rgba(106, 90, 205, 0), rgba(228, 141, 11, 1), rgba(106, 90, 205, 0));
         }
 
         .book-series {
@@ -423,6 +423,11 @@
             transform: scale(1.1);
         }
 
+        .release-badge{
+                background: rosybrown;
+    padding: 3px;
+    border-radius: 11%;
+            }
         .book-info {
             padding: 2rem;
             flex-grow: 1;
@@ -771,116 +776,7 @@
             }
         }
 
-        /* Enhanced Subscribe Section */
-        .subscribe-section {
-            background: linear-gradient(135deg, #0e0b14 0%, #0c0916 100%);
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .subscribe-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("{{ asset('images/bg/magic-particles.png') }}") repeat;
-            opacity: 0.15;
-            animation: floatParticles 60s linear infinite;
-        }
-
-        @keyframes floatParticles {
-            0% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 500px -500px;
-            }
-        }
-
-        .subscribe-section .section-title {
-            margin-bottom: 1.5rem;
-        }
-
-        .subscribe-section p {
-            text-align: center;
-            color: #d6d1f8;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .subscribe-form {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .subscribe-form .form-group {
-            display: flex;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border-radius: 50px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(106, 90, 205, 0.3);
-        }
-
-        .subscribe-form input {
-            flex-grow: 1;
-            border: none;
-            padding: 1.2rem 1.5rem;
-            background: transparent;
-            color: #ffffff;
-            font-size: 1.1rem;
-        }
-
-        .subscribe-form input::placeholder {
-            color: rgba(214, 209, 248, 0.7);
-        }
-
-        .subscribe-form input:focus {
-            outline: none;
-        }
-
-        .subscribe-form button {
-            background: linear-gradient(135deg, #0f0c16 0%, #0e0c16 100%);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .subscribe-form button:hover {
-            background: linear-gradient(135deg, #1e182b 0%, #1c1729 100%);
-        }
-
-        /* Floating elements animation */
-        .floating {
-            animation: floating 6s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
+        
         /* Responsive adjustments */
         @media (max-width: 991.98px) {
             .hero-content h1 {
@@ -971,6 +867,7 @@
                 width: 100%;
                 border-radius: 0 0 12px 12px;
             }
+           
         }
     </style>
 
@@ -1870,6 +1767,7 @@
             }
         }
     </style>
+
 @endsection
 
 @section('content')
@@ -1904,8 +1802,29 @@
                                 <div class="book-info">
                                     <h3>Book {{ $book->book_number }}:
                                         {{ Str::of($book->slug)->replace('-', ' ')->title() }}</h3>
-                                    <p class="release-date">Coming {{ $book->release_date }}</p>
-                                    <a href="{{ route('books.show', $book->slug) }}" class="btn">Get Now</a>
+                                    {{-- <p class="release-date">Coming {{ $book->release_date }}</p> --}}
+                                    <div class="book-release-info">
+                                        <span class="release-badge {{ $book->status }}">
+                                            @if($book->status == 'pre-order')
+                                                Pre-order Now
+                                            @elseif($book->status == 'published')
+                                                Buy Now
+                                            @else
+                                                Coming Soon
+                                            @endif
+                                        </span>
+                                        <p class="release-date">{{ $book->release_date }}</p>
+                                    </div>
+                                    {{-- <a href="{{ route('books.show', $book->slug) }}" class="btn">Get Now</a> --}}
+                                    <a href="{{ route('books.show', $book->slug) }}" class="btn">
+                                        @if($book->status == 'pre-order')
+                                            Pre-order Now
+                                        @elseif($book->status == 'published')
+                                            Buy Now
+                                        @else
+                                            Learn More
+                                        @endif
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1978,7 +1897,7 @@
                     <div class="video-thumbnail" id="video-thumbnail">
                         <img src="{{ asset('images/characters/bannerCharacters.jpg') }}" alt="Pagalan Chronicles Trailer">
                         <div class="play-button" id="play-button">
-                            <i class="fas fa-play"></i>
+                             <i class="fas fa-play"></i>
                         </div>
                     </div>
                     <div class="video-player" id="video-player">
@@ -2158,28 +2077,14 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('audiobooks') }}" class="btn audiobook-btn">Explore All Audiobooks</a>
+                    {{-- <a href="{{ route('audiobooks') }}" class="btn audiobook-btn">Explore All Audiobooks</a> --}}
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Subscribe Section -->
-    <section class="subscribe-section" id="subscribe">
-        <div class="container">
-            <h2 class="section-title">Join the Adventure</h2>
-            <p>Subscribe to receive updates about release dates, special offers, and exclusive content from the magical
-                world of Pagalan.</p>
 
-            <form action="{{ route('subscribe') }}" method="POST" class="subscribe-form">
-                @csrf
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your email address" required class="form-control">
-                    <button type="submit" class="btn">Subscribe Now</button>
-                </div>
-            </form>
-        </div>
-    </section>
+   <x-adventure-subscribe  />
 
     <!-- Author Quote with Animation -->
     <section class="author-quote">
@@ -2407,7 +2312,7 @@
             }
 
             // Audiobook Player Functionality
-            const audioElement = new Audio('{{ asset('audio/pagalan-sample.mp3') }}');
+            const audioElement = new Audio('{{ asset('audio/sound-1.mp3') }}');
             const playAudioBtn = document.getElementById('play-audio-btn');
             const progressBar = document.getElementById('progress');
             const progressContainer = document.getElementById('progress-bar');
@@ -2421,17 +2326,17 @@
             const audioTracks = [{
                     title: 'Sample: The Awakening - Chapter 1',
                     narrator: 'James Westbrook',
-                    src: '{{ asset('audio/pagalan-sample-1.mp3') }}'
+                    src: '{{ asset('audio/sound-1.mp3') }}'
                 },
                 {
                     title: 'Sample: The Quest - Prologue',
                     narrator: 'James Westbrook',
-                    src: '{{ asset('audio/pagalan-sample-2.mp3') }}'
+                    src: '{{ asset('audio/sound-1.mp3') }}'
                 },
                 {
                     title: 'Sample: The Battle - The Fallen Kingdom',
                     narrator: 'James Westbrook',
-                    src: '{{ asset('audio/pagalan-sample-3.mp3') }}'
+                    src: '{{ asset('audio/sound-1.mp3') }}'
                 }
             ];
 
@@ -2627,3 +2532,6 @@
         });
     </script>
 @endsection
+
+
+

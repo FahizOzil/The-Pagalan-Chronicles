@@ -129,3 +129,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// adventure 
+
+// Add this to your JS file
+document.addEventListener('DOMContentLoaded', function() {
+    const subscribeForm = document.getElementById('subscribeForm');
+    
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            
+            // Create form data object
+            const formData = new FormData(form);
+            
+            // Configure the fetch request
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    form.innerHTML = '<div class="alert alert-success">' + data.message + '</div>';
+                }
+            })
+            .catch(error => {
+                if (error.response && error.response.status === 422) {
+                    // Handle validation errors
+                    error.response.json().then(errorData => {
+                        if (errorData.errors && errorData.errors.email) {
+                            const emailInput = document.getElementById('subscriptionEmail');
+                            emailInput.classList.add('is-invalid');
+                            
+                            const errorMessage = document.createElement('div');
+                            errorMessage.className = 'invalid-feedback d-block';
+                            errorMessage.textContent = errorData.errors.email[0];
+                            form.appendChild(errorMessage);
+                        }
+                    });
+                }
+                
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            })
+            .finally(() => {
+                // Reset button state if needed
+                if (submitBtn.disabled) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            });
+            
+            // Update button state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Subscribing...';
+        });
+    }
+});

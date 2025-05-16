@@ -452,32 +452,116 @@ section {
 }
 
 /* Subscribe Section */
-.subscribe-section {
-    text-align: center;
-    background-color: #f8f9fa;
-}
+/* Enhanced Subscribe Section */
+        .subscribe-section {
+            background: linear-gradient(135deg, #0e0b14 0%, #0c0916 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
 
-.subscribe-form {
-    max-width: 500px;
-    margin: 2rem auto 0;
-}
+        .subscribe-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("{{ asset('images/bg/magic-particles.png') }}") repeat;
+            opacity: 0.15;
+            animation: floatParticles 60s linear infinite;
+        }
 
-.subscribe-form .form-group {
-    display: flex;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
+        @keyframes floatParticles {
+            0% {
+                background-position: 0 0;
+            }
 
-.subscribe-form input {
-    flex-grow: 1;
-    border-radius: 0;
-    border: none;
-    padding: 1rem;
-    height: auto;
-}
+            100% {
+                background-position: 500px -500px;
+            }
+        }
 
-.subscribe-form button {
-    border-radius: 0;
-}
+        .subscribe-section .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .subscribe-section p {
+            text-align: center;
+            color: #d6d1f8;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .subscribe-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .subscribe-form .form-group {
+            display: flex;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(106, 90, 205, 0.3);
+        }
+
+        .subscribe-form input {
+            flex-grow: 1;
+            border: none;
+            padding: 1.2rem 1.5rem;
+            background: transparent;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .subscribe-form input::placeholder {
+            color: rgba(214, 209, 248, 0.7);
+        }
+
+        .subscribe-form input:focus {
+            outline: none;
+        }
+
+        .subscribe-form button {
+            background: linear-gradient(135deg, #0f0c16 0%, #0e0c16 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background: linear-gradient(135deg, #1e182b 0%, #1c1729 100%);
+        }
+
+        /* Floating elements animation */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
 
 /* Footer */
 .site-footer {
