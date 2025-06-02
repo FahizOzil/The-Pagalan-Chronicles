@@ -136,6 +136,9 @@
             padding: 1.8rem;
             position: relative;
         }
+         .character-info p{
+            color: var(--text-secondary) !important;
+        }
 
         .character-info h3 {
             font-size: 1.5rem;

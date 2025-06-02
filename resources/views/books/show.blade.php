@@ -8,8 +8,10 @@
     --dark-surface: #1e1e1e;
     --dark-card: #252525;
     --dark-border: #333333;
-    --accent-color: #9c5dff;
-    --accent-hover: #8a42ff;
+    /* --accent-color: #9c5dff; */
+    --accent-color: #f5ba0b;
+    /* --accent-hover: #8a42ff; */
+    --accent-hover: #e97110;
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-tertiary: #808080;
@@ -572,7 +574,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 10rem 1rem;
     }
 
     .author-header {
@@ -761,141 +763,6 @@
 @endsection
 
 @section('content')
-  <!-- Improved Hero Section for Better Responsiveness -->
-  {{-- <section class="hero-section">
-    <div class="hero-bg" style="background-image: url('{{ asset('images/characters/banner4.jpg') }}')"></div>
-    <div class="container">
-    <div class="hero-content">
-      <div class="hero-grid">
-      <div class="book-cover-wrapper" data-aos="fade-right">
-        <img src="{{ asset($book->cover_image) }}" alt="{{ $book->title }} book cover" class="book-cover">
-        <div class="book-shine"></div>
-        @if($book->is_upcoming)
-        <div class="coming-soon-badge">Coming {{ $book->release_date }}</div>
-        @endif
-      </div>
-      <div class="book-details" data-aos="fade-left">
-        <h1 class="book-title">{{ $book->title }}</h1>
-        <div class="book-subtitle">Book {{ $book->book_number }} of The Pagalan Chronicles</div>
-        <div class="book-meta">
-        <div class="meta-item">
-          <i class="fas fa-calendar" aria-hidden="true"></i>
-          <span>{{ $book->is_upcoming ? 'Releasing: ' : 'Released: ' }} {{ $book->release_date }}</span>
-        </div>
-        <div class="meta-item">
-          <i class="fas fa-book" aria-hidden="true"></i>
-          <span>{{ $book->page_count }} Pages</span>
-        </div>
-        <div class="meta-item">
-          <i class="fas fa-star" aria-hidden="true"></i>
-          <span>{{ $book->category ?? 'Fantasy Adventure' }}</span>
-        </div>
-        </div>
-        <div class="purchase-container">
-        <div class="format-tabs">
-          <div class="format-tab active" data-format="hardback">Hardback</div>
-          <div class="format-tab" data-format="softback">Softback</div>
-          <div class="format-tab" data-format="ebook">eBook</div>
-        </div>
-
-        <!-- Hardback Format -->
-        <div class="format-content active" id="hardback-content">
-          <div class="price-box">
-          <span class="price">£24</span>
-          <div class="retailer-buttons">
-            <a href="{{ $book->amazon_link ?? '#' }}"
-            class="btn-retailer amazon {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->amazon_link ? '' : 'disabled' }}>
-            <i class="fab fa-amazon" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Amazon' }}
-            </a>
-            <a href="{{ $book->barnes_noble_link ?? '#' }}"
-            class="btn-retailer bn {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->barnes_noble_link ? '' : 'disabled' }}>
-            <i class="fas fa-book" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
-            </a>
-            <a href="{{ $book->direct_purchase_link ?? '#' }}"
-            class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->direct_purchase_link ? '' : 'disabled' }}>
-            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Direct' }}
-            </a>
-          </div>
-          </div>
-        </div>
-
-        <!-- Softback Format -->
-        <div class="format-content" id="softback-content">
-          <div class="price-box">
-          <span class="price">£14</span>
-          <div class="retailer-buttons">
-            <a href="{{ $book->amazon_link_soft ?? '#' }}"
-            class="btn-retailer amazon {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->amazon_link_soft ? '' : 'disabled' }}>
-            <i class="fab fa-amazon" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Amazon' }}
-            </a>
-            <a href="{{ $book->barnes_noble_link_soft ?? '#' }}"
-            class="btn-retailer bn {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->barnes_noble_link_soft ? '' : 'disabled' }}>
-            <i class="fas fa-book" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
-            </a>
-            <a href="{{ $book->direct_purchase_link_soft ?? '#' }}"
-            class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->direct_purchase_link_soft ? '' : 'disabled' }}>
-            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Direct' }}
-            </a>
-          </div>
-          </div>
-        </div>
-
-        <!-- eBook Format -->
-        <div class="format-content" id="ebook-content">
-          <div class="price-box">
-          <span class="price">£7.99</span>
-          <div class="retailer-buttons">
-            <a href="{{ $book->amazon_link_ebook ?? '#' }}"
-            class="btn-retailer amazon {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->amazon_link_ebook ? '' : 'disabled' }}>
-            <i class="fab fa-amazon" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Amazon' }}
-            </a>
-            <a href="{{ $book->kobo_link ?? '#' }}"
-            class="btn-retailer kobo {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->kobo_link ? '' : 'disabled' }}>
-            <i class="fas fa-tablet-alt" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Kobo' }}
-            </a>
-            <a href="{{ $book->direct_purchase_link_ebook ?? '#' }}"
-            class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->direct_purchase_link_ebook ? '' : 'disabled' }}>
-            <i class="fas fa-download" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Direct' }}
-            </a>
-          </div>
-          </div>
-        </div>
-
-        @if($book->is_upcoming)
-        <div class="release-notification">
-          <p><i class="fas fa-bell" aria-hidden="true"></i> Get notified when this book releases:</p>
-          <form action="{{ route('book.notify', $book->id) }}" method="POST" class="notification-form">
-          @csrf
-          <input type="email" name="email" placeholder="Your email" required>
-          <button type="submit" class="btn-notify">Notify Me</button>
-          </form>
-        </div>
-        @endif
-        </div>
-      </div>
-      </div>
-    </div>
-    </div>
-  </section> --}}
-
   <main class="book-container">
     <div class="book-bg"></div>
     <div class="book-content">

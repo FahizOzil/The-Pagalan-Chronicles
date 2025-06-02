@@ -24,6 +24,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    {{-- tailwind cdn  --}}
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     @yield('styles')
 </head>
 
