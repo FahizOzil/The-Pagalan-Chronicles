@@ -676,7 +676,8 @@
         }
 
 
-        < !-- CSS -->.author-quote {
+        /* < !-- CSS --> */
+        .author-quote {
             /* background: linear-gradient(to bottom, #1a1436 0%, #0e0b14 100%); */
             padding: 5rem 0;
             position: relative;
@@ -692,7 +693,7 @@
             height: 100%;
             background: url("{{ asset('images/author/author.jpg') }}") no-repeat center center;
             background-size: cover;
-            opacity: 0.1;
+            opacity: 0.4;
         }
 
         .quote-container {
@@ -750,7 +751,7 @@
 
         blockquote::before {
             content: "" ";
-     position: absolute;
+            position: absolute;
             top: 0;
             left: 20px;
             font-size: 8rem;
@@ -776,7 +777,7 @@
             }
         }
 
-        
+
         /* Responsive adjustments */
         @media (max-width: 991.98px) {
             .hero-content h1 {
@@ -867,7 +868,7 @@
                 width: 100%;
                 border-radius: 0 0 12px 12px;
             }
-           
+
         }
     </style>
 
@@ -1813,7 +1814,7 @@
                                                 Coming Soon
                                             @endif
                                         </span>
-                                        <p class="release-date">{{ $book->release_date }}</p>
+                                         <p class="release-date">{{  ($book->release_date < now()) ? 'Released :' : 'Coming :' }}  {{  \Carbon\Carbon::parse($book->release_date)->toFormattedDateString()  }}</p>
                                     </div>
                                     {{-- <a href="{{ route('books.show', $book->slug) }}" class="btn">Get Now</a> --}}
                                     <a href="{{ route('books.show', $book->slug) }}" class="btn">
@@ -1858,7 +1859,7 @@
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="book-card">
                             <div class="book-cover">
-                                <img src="{{ asset('images/books/book3.jpg') }}" alt="Book 3 - The Battle">
+                                <img src="{{ asset('images/books/book-3.jpg') }}" alt="Book 3 - The Battle">
                             </div>
                             <div class="book-info">
                                 <h3>Book 3: The Battle</h3>
@@ -2522,7 +2523,7 @@
                 z-index: 1;
                 pointer-events: none;
             }
-            
+
             @keyframes sparkle {
                 0% { transform: scale(0); opacity: 0.7; }
                 100% { transform: scale(2); opacity: 0; }

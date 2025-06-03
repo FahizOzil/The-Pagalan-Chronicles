@@ -180,7 +180,7 @@
         }
 
         .book-info .btn{
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #b17d1c 100%) !important; 
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #b17d1c 100%) !important;
             align-self: center !important;
             }
             .book-info h3{
@@ -336,7 +336,7 @@
         background-size: cover;
         position: relative;
     }
-    
+
     .chapter-preview-section::before {
         content: '';
         position: absolute;
@@ -346,7 +346,7 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0.75);
     }
-    
+
     .chapter-container {
         max-width: 800px;
         margin: 0 auto;
@@ -357,7 +357,7 @@
         position: relative;
         border: 1px solid rgba(255, 184, 28, 0.3);
     }
-    
+
     .book-page {
         position: relative;
         min-height: 500px;
@@ -366,11 +366,11 @@
         line-height: 1.8;
         color: #c3c0c0;
     }
-    
+
     .page-content {
         transition: all 0.5s ease;
     }
-    
+
     .page-content h4 {
         font-family: 'Cinzel', serif;
         font-size: 2rem;
@@ -380,31 +380,31 @@
         border-bottom: 1px solid rgba(255, 184, 28, 0.3);
         padding-bottom: 1rem;
     }
-    
+
     .page-content p {
         margin-bottom: 1.5rem;
         opacity: 0.7;
         transition: all 0.8s ease;
         transform: translateY(10px);
     }
-    
+
     /* Visual effect for active paragraph */
     .page-content p.active-paragraph {
         opacity: 1;
         transform: translateY(0);
         text-shadow: 0 0 5px rgba(255, 184, 28, 0.3);
     }
-    
+
     /* New content section styling */
     .new-content-section {
         transition: opacity 0.8s ease;
     }
-    
+
     /* Prevent content jumping */
     .page-content {
         transition: height 0.5s ease;
     }
-    
+
     .page-turner {
         position: relative;
         text-align: center;
@@ -412,7 +412,7 @@
         padding-top: 1rem;
         border-top: 1px solid rgba(255, 184, 28, 0.3);
     }
-    
+
     .page-turner .btn {
         background: var(--primary-color);
         color: white;
@@ -424,57 +424,57 @@
         font-weight: 600;
         letter-spacing: 1px;
     }
-    
+
     .page-turner .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
-    
+
     .page-turner .btn-warning {
         background: linear-gradient(135deg, #f5a623, #b17d1c);
         color: white;
     }
-    
+
     /* Scrollbar styling for chapter container */
     .book-page::-webkit-scrollbar {
         width: 5px;
     }
-    
+
     .book-page::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0.1);
     }
-    
+
     .book-page::-webkit-scrollbar-thumb {
         background: rgba(255, 184, 28, 0.5);
         border-radius: 10px;
     }
-    
+
     /* Responsive styles */
     @media (max-width: 768px) {
         .chapter-container {
             padding: 25px;
         }
-        
+
         .book-page {
             min-height: 400px;
             font-size: 1rem;
         }
-        
+
         .page-content h4 {
             font-size: 1.6rem;
         }
     }
-    
+
     @media (max-width: 576px) {
         .chapter-container {
             padding: 20px;
         }
-        
+
         .book-page {
             min-height: 350px;
             font-size: 0.95rem;
         }
-        
+
         .page-content h4 {
             font-size: 1.4rem;
         }
@@ -536,7 +536,7 @@
                 margin-bottom: 0.75rem;
             } */
 
-       
+
         /* Countdown Timer */
         .countdown-section {
             padding: 100px 0;
@@ -627,7 +627,7 @@
 
 
             /* book show case  */
-           
+
         }
     </style>
 
@@ -637,7 +637,7 @@
     .container {
         max-width: 1140px;
     }
-    
+
     .book-card-3d {
         height: 500px;
         width: 350px;
@@ -649,12 +649,12 @@
     .container {
         max-width: 960px;
     }
-    
+
     .book-card-3d {
         height: 450px;
         width: 320px;
     }
-    
+
     .page-title {
         font-size: 4.5rem;
     }
@@ -665,32 +665,32 @@
     .container {
         max-width: 720px;
     }
-    
+
     .banner-content {
         padding: 1rem;
     }
-    
+
     .page-title {
         font-size: 3.5rem;
     }
-    
+
     .page-subtitle {
         font-size: 1.8rem;
     }
-    
+
     .book-card-3d {
         height: 400px;
         width: 280px;
     }
-    
+
     .timeline-container {
         padding: 0 20px;
     }
-    
+
     .testimonial-item {
         margin-bottom: 30px;
     }
-    
+
     .subscription-box {
         padding: 30px;
     }
@@ -701,47 +701,47 @@
     .container {
         max-width: 540px;
     }
-    
+
     .page-banner {
         min-height: 80vh;
     }
-    
+
     .page-title {
         font-size: 2.8rem;
     }
-    
+
     .page-subtitle {
         font-size: 1.4rem;
     }
-    
+
     .banner-cta .btn {
         display: block;
         width: 100%;
         margin: 10px 0;
     }
-    
+
     .banner-cta .btn-outline-light {
         margin-left: 0 !important;
     }
-    
+
     .book-card-3d {
         height: 350px;
         width: 250px;
         margin: 0 auto 30px;
     }
-    
+
     .chapter-container {
         padding: 20px;
     }
-    
+
     .book-page {
         min-height: auto;
     }
-    
+
     .countdown-timer {
         flex-wrap: wrap;
     }
-    
+
     .time-block {
         flex: 0 0 calc(50% - 20px);
         margin-bottom: 20px;
@@ -753,37 +753,37 @@
     .page-title {
         font-size: 2.2rem;
     }
-    
+
     .page-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .book-card-3d {
         height: 300px;
         width: 220px;
     }
-    
+
     .book-spine-title {
         font-size: 1.2rem;
         bottom: 100px;
     }
-    
+
     .timeline-content {
         padding: 15px;
     }
-    
+
     .timeline-content h3 {
         font-size: 1.2rem;
     }
-    
+
     .subscription-box h3 {
         font-size: 1.5rem;
     }
-    
+
     .subscribe-form input {
         height: 50px;
     }
-    
+
     .subscribe-form button {
         position: static;
         width: 100%;
@@ -796,11 +796,11 @@
     .book-card-3d:hover {
         transform: none;
     }
-    
+
     .book-card-3d {
         transform: rotateY(15deg);
     }
-    
+
     .hotspot-info {
         opacity: 1;
         visibility: visible;
@@ -813,11 +813,11 @@
     .page-banner {
         min-height: 100vh;
     }
-    
+
     .page-title {
         font-size: 2.5rem;
     }
-    
+
     .banner-cta {
         margin-top: 1rem;
     }
@@ -870,8 +870,8 @@
                         </div>
                         <div class="book-info text-center mt-4">
                             <h3>{{ $book->title }}</h3>
-                            <p class="release-date">Coming May 2025</p>
-                            <a href="{{ route('books.show', $book->slug) }}" class="btn btn-primary mt-3">Pre-order Now</a>
+                            <p class="release-date">{{  ($book->release_date < now()) ? 'Released' : 'Coming ' }}  {{  \Carbon\Carbon::parse($book->release_date)->toFormattedDateString()  }}</p>
+                            <a href="{{ route('books.show', $book->slug) }}" class="btn btn-primary mt-3"> {{  $book->release_date < now() ? 'Buy Now' : 'PRE-ORDER NOW'  }} </a>
                         </div>
                     </div>
                 @endforeach
@@ -916,7 +916,7 @@
     </section>
 
     <!-- Enhanced Countdown Timer -->
-    <section class="countdown-section py-5">
+    {{-- <section class="countdown-section py-5">
         <div class="container">
             <div class="release-countdown text-center py-5" data-aos="zoom-in">
                 <h3 class="mb-4">New Book Release In:</h3>
@@ -943,9 +943,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-   
+
 <!-- Enhanced Chapter Preview Section -->
 <section class="chapter-preview-section" id="preview">
     <div class="container">
@@ -966,10 +966,10 @@
 </section>
     {{-- testimonials section --}}
     <!-- Testimonials -->
-    <x-readers-reactions /> 
+    <x-readers-reactions />
 
         <!-- Subscription Section -->
-<x-adventure-subscribe /> 
+<x-adventure-subscribe />
 @endsection
 
 @section('scripts')
@@ -978,7 +978,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             AOS.init({
                 duration: 1200,
@@ -1013,7 +1013,7 @@
                 }
             }, 1000);
         });
-    </script>
+    </script> --}}
     <script>
         // Floating Magic Particles
         const magicParticles = document.querySelectorAll('.magic-particle');
@@ -1032,7 +1032,7 @@
             });
         }, 5000);
 
-        // read more chapter script 
+        // read more chapter script
         const readMoreBtn = document.querySelector('.page-turner .btn');
         const chapterContent = document.querySelector('.page-content');
         const fullChapter = `
@@ -1079,7 +1079,7 @@
 document.querySelectorAll('.book-card-3d').forEach(card => {
     let touching = false;
     let startAngle = 15;
-    
+
     card.addEventListener('touchstart', (e) => {
         touching = true;
         const touch = e.touches[0];
@@ -1088,23 +1088,23 @@ document.querySelectorAll('.book-card-3d').forEach(card => {
         const touchX = touch.clientX;
         const ratio = (touchX - centerX) / (rect.width / 2);
         const angle = startAngle + (ratio * 20);
-        
+
         card.style.transform = `rotateY(${angle}deg)`;
     });
-    
+
     card.addEventListener('touchmove', (e) => {
         if (!touching) return;
-        
+
         const touch = e.touches[0];
         const rect = card.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const touchX = touch.clientX;
         const ratio = (touchX - centerX) / (rect.width / 2);
         const angle = startAngle + (ratio * 20);
-        
+
         card.style.transform = `rotateY(${angle}deg)`;
     });
-    
+
     card.addEventListener('touchend', () => {
         touching = false;
         card.style.transform = `rotateY(${startAngle}deg)`;
@@ -1152,7 +1152,7 @@ if (window.innerWidth <= 767) {
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.navbar-toggler');
     const navigation = document.querySelector('.navbar-collapse');
-    
+
     if (menuToggle && navigation) {
         menuToggle.addEventListener('click', function() {
             if (navigation.classList.contains('show')) {
@@ -1165,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navigation.style.maxHeight = navigation.scrollHeight + 'px';
             }
         });
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navigation.contains(e.target) && !menuToggle.contains(e.target)) {
@@ -1202,35 +1202,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     const pageContent = document.querySelector('.page-content');
     const pageTurner = document.querySelector('.page-turner');
-    
+
     // Safety check - ensure elements exist before proceeding
     if (!pageContent || !pageTurner) {
         console.error('Required chapter preview elements not found');
         return;
     }
-    
+
     // Initialize chapter view with only the first section
     let currentSection = 0;
-    
+
     // Set initial content
     function initializeChapter() {
         // Create initial container with title
         const initialContainer = document.createElement('div');
         initialContainer.innerHTML = `<h4>${chapterContent[0].title}</h4>`;
         pageContent.appendChild(initialContainer);
-        
+
         // Create container for first paragraphs with fade-in effect
         const firstContentSection = document.createElement('div');
         firstContentSection.className = 'new-content-section';
         firstContentSection.style.opacity = '0';
         firstContentSection.innerHTML = chapterContent[0].content;
         pageContent.appendChild(firstContentSection);
-        
+
         // Fade in the content
         setTimeout(() => {
             firstContentSection.style.transition = 'opacity 0.8s ease';
             firstContentSection.style.opacity = '1';
-            
+
             // Add active class to paragraphs
             setTimeout(() => {
                 firstContentSection.querySelectorAll('p').forEach(p => {
@@ -1238,40 +1238,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, 500);
         }, 300);
-        
+
         // Create Read More button
         updateButton("Read More", loadNextSection);
     }
-    
+
     // Function to load next section
     function loadNextSection() {
         // Mark the current position relative to the bottom of the content
         const lastElement = pageContent.lastElementChild;
         const relativePosition = window.scrollY + window.innerHeight - lastElement.offsetTop;
-        
+
         currentSection++;
-        
+
         // Create a container for the new content to enable fade-in effect
         const newContentContainer = document.createElement('div');
         newContentContainer.className = 'new-content-section';
         newContentContainer.style.opacity = '0';
         newContentContainer.innerHTML = chapterContent[currentSection].content;
-        
+
         // Append the container
         pageContent.appendChild(newContentContainer);
-        
+
         // Calculate new position to maintain relative view
         const newLastElement = pageContent.lastElementChild;
         const newPosition = newLastElement.offsetTop - window.innerHeight + relativePosition;
-        
+
         // Scroll to maintain position
         window.scrollTo(0, newPosition);
-        
+
         // Fade in the new content
         setTimeout(() => {
             newContentContainer.style.transition = 'opacity 0.8s ease';
             newContentContainer.style.opacity = '1';
-            
+
             // Smooth scroll to show the new content
             setTimeout(() => {
                 const targetY = newContentContainer.offsetTop - 100; // Show more context above new content
@@ -1281,30 +1281,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, 200);
         }, 50);
-        
+
         // Add active-paragraph class to new paragraphs after they're visible
         setTimeout(() => {
             newContentContainer.querySelectorAll('p').forEach(p => {
                 p.classList.add('active-paragraph');
             });
         }, 800);
-        
+
         // If we're at the last section, show Amazon button
         if (currentSection >= chapterContent.length - 1) {
             updateButton("Buy on Amazon", redirectToAmazon);
         }
     }
-    
+
     // Function to update the button text and action
     function updateButton(text, action) {
         // Clear existing buttons
         pageTurner.innerHTML = '';
-        
+
         // Create new button
         const btn = document.createElement('a');
         btn.href = "javascript:void(0)"; // Use javascript:void(0) instead of # to prevent scroll jump
         btn.className = "btn";
-        
+
         if (text === "Buy on Amazon") {
             btn.className = "btn btn-warning";
             btn.innerHTML = '<i class="fa fa-shopping-cart"></i> ' + text;
@@ -1312,10 +1312,10 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.className = "btn btn-primary";
             btn.textContent = text;
         }
-        
+
         // Add animation class
         btn.classList.add('animate__animated', 'animate__pulse', 'animate__infinite');
-        
+
         // Add event listener with explicit preventDefault
         btn.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent default anchor behavior
@@ -1323,17 +1323,17 @@ document.addEventListener('DOMContentLoaded', function() {
             action();
             return false; // Extra precaution
         });
-        
+
         // Add to page turner
         pageTurner.appendChild(btn);
     }
-    
+
     // Function to redirect to Amazon
     function redirectToAmazon() {
         // You can replace this URL with your actual Amazon book link
         window.open('https://www.amazon.com/dp/PagalanChroniclesBook1', '_blank');
     }
-    
+
     // Add visual effects when scrolling through chapter
     function addReadingEffects() {
         const observer = new IntersectionObserver((entries) => {
@@ -1345,16 +1345,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }, {
             threshold: 0.5
         });
-        
+
         // Observe all paragraphs
         document.querySelectorAll('.page-content p').forEach(p => {
             observer.observe(p);
         });
     }
-    
+
     // Initialize the chapter preview
     initializeChapter();
-    
+
     // Add scroll effects with a slight delay
     setTimeout(addReadingEffects, 500);
 });
