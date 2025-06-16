@@ -30,28 +30,12 @@ Route::get('/world/download/{map}', [WorldController::class, 'downloadMap'])->na
 Route::get('/author', [AuthorController::class, 'index'])->name('author');
 
 // Contact Page
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.submit');
+Route::view('/contact',  'contact')->name('contact');
+Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.submit');
 
 // Subscribe Functionality
 Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
 
-//audiobook
-// Route::get('/audiobook', function () {
-//     return view('pages.audiobook');
-// })->name('audiobooks');
 
-// Optional Blog/News Section
-// Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
-// Route::get('/blog/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
-
-// Terms and Privacy
-// Route::get('/terms', function () {
-//     return view('pages.terms');
-// })->name('terms');
-
-// Route::get('/privacy', function () {
-//     return view('pages.privacy');
-// })->name('privacy');
 
 

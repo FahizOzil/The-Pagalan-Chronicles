@@ -1,5 +1,5 @@
  <!-- Subscription Section -->
-    <section class="subscribe-section" id="subscribe">
+    {{-- <section class="subscribe-section" id="subscribe">
         <div class="container">
             <h2 class="section-title text-white">Join the Adventure</h2>
             <p>Subscribe to receive updates about The Pagalan Chronicles and be the first to know about new releases!</p>
@@ -26,4 +26,4 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section> --}}

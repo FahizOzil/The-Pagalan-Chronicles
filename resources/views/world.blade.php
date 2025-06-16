@@ -105,9 +105,9 @@
 
                 <div class="map-viewer">
                     <div class="map-controls">
-                        <button class="control-btn" id="zoomIn"><i class="fas fa-plus"></i></button>
-                        <button class="control-btn" id="zoomOut"><i class="fas fa-minus"></i></button>
-                        <button class="control-btn" id="resetView"><i class="fas fa-sync"></i></button>
+                        <button class="control-btn" style="color:#121212;" id="zoomIn"><i class="fas fa-plus"></i></button>
+                        <button class="control-btn" style="color:#121212;" id="zoomOut"><i class="fas fa-minus"></i></button>
+                        <button class="control-btn" style="color:#121212;" id="resetView"><i class="fas fa-sync"></i></button>
                     </div>
 
                     <div class="map-image active" id="main-map">
@@ -633,7 +633,7 @@
             <div class="race-info">
                 <h3>${race.name}</h3>
                 <p>${race.description}</p>
-                
+
             </div>
         `;
 
@@ -715,20 +715,20 @@
 function initializeMap() {
     // Ensure the DOM is fully loaded
     console.log('Map initialization started');
-    
+
     // Get active map container
     const mapContainer = document.querySelector('.map-container');
     if (!mapContainer) {
         console.error('Map container not found');
         return;
     }
-    
+
     // Map state variables
     let currentScale = 1;
     let isDragging = false;
     let startPos = { x: 0, y: 0 };
     let currentPos = { x: 0, y: 0 };
-    
+
     // Initialize map navigation buttons
     const mapNavButtons = document.querySelectorAll('.map-nav-btn');
     mapNavButtons.forEach(button => {
@@ -736,14 +736,14 @@ function initializeMap() {
             // Remove active class from all buttons and map images
             document.querySelectorAll('.map-nav-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.map-image').forEach(map => map.classList.remove('active'));
-            
+
             // Add active class to clicked button and corresponding map
             button.classList.add('active');
             const mapId = `${button.getAttribute('data-map')}-map`;
             const mapElement = document.getElementById(mapId);
             if (mapElement) {
                 mapElement.classList.add('active');
-                
+
                 // Reset position and scale when switching maps
                 currentScale = 1;
                 currentPos = { x: 0, y: 0 };
@@ -751,12 +751,12 @@ function initializeMap() {
             }
         });
     });
-    
+
     // Setup map controls
     const zoomIn = document.getElementById('zoomIn');
     const zoomOut = document.getElementById('zoomOut');
     const resetView = document.getElementById('resetView');
-    
+
     if (zoomIn) {
         zoomIn.addEventListener('click', () => {
             currentScale = Math.min(currentScale * 1.2, 3);
@@ -766,7 +766,7 @@ function initializeMap() {
     } else {
         console.error('Zoom in button not found');
     }
-    
+
     if (zoomOut) {
         zoomOut.addEventListener('click', () => {
             currentScale = Math.max(currentScale / 1.2, 0.5);
@@ -776,7 +776,7 @@ function initializeMap() {
     } else {
         console.error('Zoom out button not found');
     }
-    
+
     if (resetView) {
         resetView.addEventListener('click', () => {
             currentScale = 1;
@@ -787,7 +787,7 @@ function initializeMap() {
     } else {
         console.error('Reset view button not found');
     }
-    
+
     // Map dragging functionality
     function startDragging(e) {
         isDragging = true;
@@ -798,10 +798,10 @@ function initializeMap() {
         };
         e.preventDefault();
     }
-    
+
     function handleDrag(e) {
         if (!isDragging) return;
-        
+
         const pos = getEventPosition(e);
         currentPos = {
             x: pos.x - startPos.x,
@@ -809,11 +809,11 @@ function initializeMap() {
         };
         updateMapTransform();
     }
-    
+
     function stopDragging() {
         isDragging = false;
     }
-    
+
     function getEventPosition(e) {
         if (e.touches && e.touches[0]) {
             return {
@@ -826,18 +826,18 @@ function initializeMap() {
             y: e.clientY
         };
     }
-    
+
     // Add event listeners for map dragging
     document.querySelectorAll('.map-wrapper').forEach(wrapper => {
         wrapper.addEventListener('mousedown', startDragging);
         wrapper.addEventListener('touchstart', startDragging, { passive: false });
     });
-    
+
     document.addEventListener('mousemove', handleDrag);
     document.addEventListener('touchmove', handleDrag, { passive: false });
     document.addEventListener('mouseup', stopDragging);
     document.addEventListener('touchend', stopDragging);
-    
+
     // Update map transform
     function updateMapTransform() {
         const activeMap = document.querySelector('.map-image.active .map-wrapper');
@@ -847,7 +847,7 @@ function initializeMap() {
             console.warn('No active map found');
         }
     }
-    
+
     // Initialize hotspot functionality
     const hotspots = document.querySelectorAll('.map-hotspot');
     hotspots.forEach(hotspot => {
@@ -859,7 +859,7 @@ function initializeMap() {
             hotspot.classList.toggle('active');
         });
     });
-    
+
     // Initialize map regions
     const regions = document.querySelectorAll('.map-region');
     regions.forEach(region => {
@@ -870,12 +870,12 @@ function initializeMap() {
             tooltip.textContent = regionName;
             region.appendChild(tooltip);
         });
-        
+
         region.addEventListener('mouseleave', () => {
             const tooltip = region.querySelector('.region-tooltip');
             if (tooltip) region.removeChild(tooltip);
         });
-        
+
         region.addEventListener('click', () => {
             const regionName = region.getAttribute('data-region');
             // Find and show the corresponding hotspot info
@@ -888,7 +888,7 @@ function initializeMap() {
             }
         });
     });
-    
+
     // Additional CSS for smooth transitions
     const style = document.createElement('style');
     style.textContent = `
@@ -914,7 +914,7 @@ function initializeMap() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Set initial state
     updateMapTransform();
     console.log('Map initialization completed');
@@ -1008,7 +1008,7 @@ if (document.readyState !== 'loading') {
                     slide.innerHTML = `
                 <div class="race-card">
                     <div class="race-image">
-                        <img src="/images/races/${race.image}" alt="${race.name}" 
+                        <img src="/images/races/${race.image}" alt="${race.name}"
                              onerror="this.src='/images/races/placeholder.jpg'">
                     </div>
                     <div class="race-info">
@@ -2080,7 +2080,7 @@ if (document.readyState !== 'loading') {
     .map-viewer {
         height: 400px;
     }
-    
+
     .hotspot-info {
         width: 220px;
         left: -100px;
@@ -2091,17 +2091,17 @@ if (document.readyState !== 'loading') {
     .map-viewer {
         height: 300px;
     }
-    
+
     .map-controls {
         bottom: 10px;
         right: 10px;
     }
-    
+
     .control-btn {
         width: 34px;
         height: 34px;
     }
-    
+
     .hotspot-info {
         width: 200px;
         left: -90px;
