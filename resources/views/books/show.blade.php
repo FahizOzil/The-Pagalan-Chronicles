@@ -790,15 +790,15 @@
 
       <div class="purchase-container">
         <div class="format-tabs">
-        <div class="format-tab active" data-format="hardback">Hardback</div>
-        <div class="format-tab" data-format="softback">Softback</div>
-        <div class="format-tab" data-format="ebook">eBook</div>
+        <div class="format-tab active" data-format="hardback">Hardcover</div>
+        <div class="format-tab" data-format="softback">Paperback</div>
+        <div class="format-tab" data-format="ebook">Kindle & Ebook</div>
         </div>
 
         <!-- Hardback Format -->
         <div class="format-content active" id="hardback-content">
         <div class="price-box">
-          <span class="price">£24</span>
+          {{-- <span class="price">Choose Platform</span> --}}
           <div class="retailer-buttons">
           <a href="{{ $book->amazon_link ?? '#' }}"
             class="btn-retailer amazon {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
@@ -812,11 +812,11 @@
             <i class="fas fa-book" aria-hidden="true"></i>
             {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
           </a>
-          <a href="{{ $book->direct_purchase_link ?? '#' }}"
+          <a href="{{ $book->bam_link ?? '#' }}"
             class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->direct_purchase_link ? '' : 'disabled' }}>
+            rel="noopener noreferrer" {{ $book->bam_link ? '' : 'disabled' }}>
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Direct' }}
+            {{ $book->is_upcoming ? 'Pre-order' : 'Books A Million' }}
           </a>
           </div>
         </div>
@@ -825,7 +825,7 @@
         <!-- Softback Format -->
         <div class="format-content" id="softback-content">
         <div class="price-box">
-          <span class="price">£14</span>
+          {{-- <span class="price">Choose Platform</span> --}}
           <div class="retailer-buttons">
           <a href="{{ $book->amazon_link_soft ?? '#' }}"
             class="btn-retailer amazon {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
@@ -839,11 +839,11 @@
             <i class="fas fa-book" aria-hidden="true"></i>
             {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
           </a>
-          <a href="{{ $book->direct_purchase_link_soft ?? '#' }}"
+          <a href="{{ $book->bam_link_soft ?? '#' }}"
             class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
-            rel="noopener noreferrer" {{ $book->direct_purchase_link_soft ? '' : 'disabled' }}>
+            rel="noopener noreferrer" {{ $book->bam_link_soft ? '' : 'disabled' }}>
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Direct' }}
+            {{ $book->is_upcoming ? 'Pre-order' : 'Books A Million' }}
           </a>
           </div>
         </div>
@@ -852,7 +852,7 @@
         <!-- eBook Format -->
         <div class="format-content" id="ebook-content">
         <div class="price-box">
-          <span class="price">£7.99</span>
+          {{-- <span class="price">Choose Platform</span> --}}
           <div class="retailer-buttons">
           <a href="{{ $book->amazon_link_ebook ?? '#' }}"
             class="btn-retailer amazon {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
@@ -863,15 +863,15 @@
           <a href="{{ $book->kobo_link ?? '#' }}"
             class="btn-retailer kobo {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
             rel="noopener noreferrer" {{ $book->kobo_link ? '' : 'disabled' }}>
-            <i class="fas fa-tablet-alt" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Kobo' }}
+            <i class="fas fa-book" aria-hidden="true"></i>
+            {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
           </a>
-          <a href="{{ $book->direct_purchase_link_ebook ?? '#' }}"
+          {{-- <a href="{{ $book->direct_purchase_link_ebook ?? '#' }}"
             class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
             rel="noopener noreferrer" {{ $book->direct_purchase_link_ebook ? '' : 'disabled' }}>
             <i class="fas fa-download" aria-hidden="true"></i>
-            {{ $book->is_upcoming ? 'Pre-order' : 'Direct' }}
-          </a>
+            {{ $book->is_upcoming ? 'Pre-order' : 'Books A Million' }}
+          </a> --}}
           </div>
         </div>
         </div>

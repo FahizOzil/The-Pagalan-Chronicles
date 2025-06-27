@@ -915,37 +915,6 @@
         </div>
     </section>
 
-    <!-- Enhanced Countdown Timer -->
-    {{-- <section class="countdown-section py-5">
-        <div class="container">
-            <div class="release-countdown text-center py-5" data-aos="zoom-in">
-                <h3 class="mb-4">New Book Release In:</h3>
-                <div class="countdown-timer d-flex justify-content-center gap-4 mt-4">
-                    <div class="time-block">
-                        <div class="time-value" id="countdown-days">00</div>
-                        <div class="time-label">Days</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-value" id="countdown-hours">00</div>
-                        <div class="time-label">Hours</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-value" id="countdown-minutes">00</div>
-                        <div class="time-label">Minutes</div>
-                    </div>
-                    <div class="time-block">
-                        <div class="time-value" id="countdown-seconds">00</div>
-                        <div class="time-label">Seconds</div>
-                    </div>
-                </div>
-                <div class="mt-5">
-                    <a href="#preorder" class="btn btn-lg" style="background:#b17d1c;">Pre-order Now</a>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-
 <!-- Enhanced Chapter Preview Section -->
 <section class="chapter-preview-section" id="preview">
     <div class="container">
@@ -978,42 +947,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    {{-- <script>
-        $(document).ready(function() {
-            AOS.init({
-                duration: 1200,
-                once: true,
-            });
-
-            // Countdown Timer
-            const countdownDate = new Date("May 1, 2025 00:00:00").getTime();
-            const countdownElement = document.querySelector('.release-countdown');
-            const countdownDays = document.getElementById('countdown-days');
-            const countdownHours = document.getElementById('countdown-hours');
-            const countdownMinutes = document.getElementById('countdown-minutes');
-            const countdownSeconds = document.getElementById('countdown-seconds');
-
-            setInterval(function() {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                countdownDays.innerHTML = days < 10 ? "0" + days : days;
-                countdownHours.innerHTML = hours < 10 ? "0" + hours : hours;
-                countdownMinutes.innerHTML = minutes < 10 ? "0" + minutes : minutes;
-                countdownSeconds.innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-                if (distance < 0) {
-                    clearInterval(x);
-                    countdownElement.innerHTML = "Book Released!";
-                }
-            }, 1000);
-        });
-    </script> --}}
     <script>
         // Floating Magic Particles
         const magicParticles = document.querySelectorAll('.magic-particle');
@@ -1272,13 +1205,9 @@ document.addEventListener('DOMContentLoaded', function() {
             newContentContainer.style.transition = 'opacity 0.8s ease';
             newContentContainer.style.opacity = '1';
 
-            // Smooth scroll to show the new content
+            // Smooth scroll to the new content
             setTimeout(() => {
-                const targetY = newContentContainer.offsetTop - 100; // Show more context above new content
-                window.scrollTo({
-                    top: targetY,
-                    behavior: 'smooth'
-                });
+                newContentContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 200);
         }, 50);
 

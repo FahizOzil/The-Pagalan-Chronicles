@@ -2067,7 +2067,7 @@
                     </div>
 
                     <div class="audiobook-platforms">
-                        <h4>Available On:</h4>
+                        <h4>Available Soon:</h4>
                         <div class="platform-logos">
                             <a href="#" class="platform-logo"><img
                                     src="{{ asset('images/platforms/audible.jpg') }}" alt="Audible"></a>

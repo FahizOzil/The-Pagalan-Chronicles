@@ -3,6 +3,7 @@
 @section('title', 'The World of Pagalan - Maps & Lore')
 
 @section('content')
+
     <!-- Parallax Hero Banner with 3D Effect -->
     <div class="page-banner world-banner parallax-banner">
         <div class="floating-particles"></div>
@@ -32,18 +33,18 @@
                         societies. The landscape is as diverse as its inhabitants, featuring sprawling forests, towering
                         mountains, mysterious ancient ruins, and bustling modern cities.</p>
                     <div class="magic-stats">
-                        <div class="stat-item" data-count="3">
+                        <div class="stat-item" data-count="1">
                             <span class="stat-number">0</span>
                             <span class="stat-label">Major Continents</span>
                         </div>
-                        <div class="stat-item" data-count="12">
+                        <div class="stat-item" data-count="8">
                             <span class="stat-number">0</span>
                             <span class="stat-label">Unique Cultures</span>
                         </div>
-                        <div class="stat-item" data-count="1000">
+                        {{-- <div class="stat-item" data-count="1000">
                             <span class="stat-number">0</span>
                             <span class="stat-label">Years of History</span>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
@@ -74,210 +75,825 @@
         </div>
     </section>
 
-    <!-- Interactive 3D Map Section -->
-    <section class="interactive-maps">
-        <div class="container">
-            <h2 class="section-title text-center">Interactive Maps</h2>
-            <p class="section-description text-center">Explore the detailed maps of Pagalan's continents and key locations.
-            </p>
+    <!-- Simplified Map Gallery Section -->
+ <section class="relative py-20 px-4 bg-ancient-pattern">
+        <!-- Decorative Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-ancient-gold opacity-10 rounded-full animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-24 h-24 bg-mystical-blue opacity-10 rounded-full animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-deep-bronze opacity-10 rounded-full animate-float" style="animation-delay: -4s;"></div>
+        </div>
 
-            <div class="map-container" data-aos="zoom-in">
-                <div class="map-navigation">
-                    <div class="nav-scroll">
-                        <button class="map-nav-btn active" data-map="main">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <span>Main Continent</span>
-                        </button>
-                        <button class="map-nav-btn" data-map="eastern">
-                            <i class="fas fa-compass"></i>
-                            <span>Eastern Isles</span>
-                        </button>
-                        <button class="map-nav-btn" data-map="southern">
-                            <i class="fas fa-mountain"></i>
-                            <span>Southern Territories</span>
-                        </button>
-                        <button class="map-nav-btn" data-map="northern">
-                            <i class="fas fa-snowflake"></i>
-                            <span>Northern Lands</span>
-                        </button>
-                    </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <h2 class="font-fantasy text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-ancient-gold via-amber-600 to-deep-bronze  text-gray-950 animate-glow">
+                        Maps of Pagalan
+                    </h2>
+                    <div class="h-1 w-32 bg-gradient-to-r from-transparent via-ancient-gold to-transparent mx-auto mt-4"></div>
                 </div>
+                <p class="font-elegant text-xl md:text-2xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
+                    Journey through the mystical realms and ancient territories that comprise the vast world of Pagalan.
+                    Each region holds its own secrets, cultures, and legends waiting to be discovered.
+                </p>
+            </div>
 
-                <div class="map-viewer">
-                    <div class="map-controls">
-                        <button class="control-btn" style="color:#121212;" id="zoomIn"><i class="fas fa-plus"></i></button>
-                        <button class="control-btn" style="color:#121212;" id="zoomOut"><i class="fas fa-minus"></i></button>
-                        <button class="control-btn" style="color:#121212;" id="resetView"><i class="fas fa-sync"></i></button>
-                    </div>
+            <!-- Maps Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-                    <div class="map-image active" id="main-map">
-                        <div class="map-canvas">
-                            <div class="map-wrapper">
-                                <img src="{{ asset('images/map/PagalanMap.jpg') }}" alt="Main Continent of Pagalan"
-                                    class="img-fluid">
-
-                                <!-- Dynamic Interactive Regions -->
-                                <div class="map-region" id="region-trebos" data-region="Trebos">
-                                    <svg class="region-svg" viewBox="0 0 100 100" preserveAspectRatio="none"
-                                        style="position: absolute; top: 20%; left: 15%; width: 15%; height: 15%;">
-                                        <path d="M10,10 L90,10 L90,90 L10,90 Z" class="region-path" />
-                                    </svg>
-                                </div>
-
-                                <div class="map-region" id="region-lobos" data-region="Lobos">
-                                    <svg class="region-svg" viewBox="0 0 100 100" preserveAspectRatio="none"
-                                        style="position: absolute; top: 40%; left: 60%; width: 18%; height: 20%;">
-                                        <path
-                                            d="M10,10 C30,5 70,5 90,10 C95,30 95,70 90,90 C70,95 30,95 10,90 C5,70 5,30 10,10 Z"
-                                            class="region-path" />
-                                    </svg>
-                                </div>
-
-                                <div class="map-region" id="region-sirath" data-region="Sirath">
-                                    <svg class="region-svg" viewBox="0 0 100 100" preserveAspectRatio="none"
-                                        style="position: absolute; top: 60%; left: 35%; width: 22%; height: 25%;">
-                                        <path d="M50,10 L90,40 L70,90 L30,90 L10,40 Z" class="region-path" />
-                                    </svg>
-                                </div>
-
-                                <!-- Enhanced Interactive Hotspots -->
-                                <div class="map-hotspot" style="top: 25%; left: 22%;" data-region="Trebos">
-                                    <div class="hotspot-marker">
-                                        <div class="ripple"></div>
-                                    </div>
-                                    <div class="hotspot-info">
-                                        <div class="info-header">
-                                            <h4>Trebos</h4>
-                                            <span class="region-type">Peaceful Nation</span>
-                                        </div>
-                                        <div class="info-content">
-                                            <p>Melinor's homeland. A rich society yet untouched by war. A peaceful nation
-                                                governed by an elected council.</p>
-                                            <div class="region-stats">
-                                                <div class="stat">
-                                                    <i class="fas fa-users"></i>
-                                                    <span>Population: 2.5M</span>
-                                                </div>
-                                                <div class="stat">
-                                                    <i class="fas fa-landmark"></i>
-                                                    <span>Government: Council</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="learn-more-btn">Learn More <i
-                                                class="fas fa-arrow-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="map-hotspot" style="top: 45%; left: 65%;" data-region="Lobos">
-                                    <div class="hotspot-marker">
-                                        <div class="ripple"></div>
-                                    </div>
-                                    <div class="hotspot-info">
-                                        <div class="info-header">
-                                            <h4>Lobos</h4>
-                                            <span class="region-type">Warrior Kingdom</span>
-                                        </div>
-                                        <div class="info-content">
-                                            <p>A powerful kingdom known for its fierce warriors and advanced military
-                                                strategies. Has been in conflict with neighboring regions for centuries.</p>
-                                            <div class="region-stats">
-                                                <div class="stat">
-                                                    <i class="fas fa-users"></i>
-                                                    <span>Population: 4.8M</span>
-                                                </div>
-                                                <div class="stat">
-                                                    <i class="fas fa-crown"></i>
-                                                    <span>Government: Monarchy</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="learn-more-btn">Learn More <i
-                                                class="fas fa-arrow-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="map-hotspot" style="top: 65%; left: 45%;" data-region="Sirath">
-                                    <div class="hotspot-marker">
-                                        <div class="ripple"></div>
-                                    </div>
-                                    <div class="hotspot-info">
-                                        <div class="info-header">
-                                            <h4>Sirath</h4>
-                                            <span class="region-type">Magical Realm</span>
-                                        </div>
-                                        <div class="info-content">
-                                            <p>Home to the most powerful mages in all of Pagalan. The landscape is infused
-                                                with magical energy, creating extraordinary natural phenomena.</p>
-                                            <div class="region-stats">
-                                                <div class="stat">
-                                                    <i class="fas fa-users"></i>
-                                                    <span>Population: 1.2M</span>
-                                                </div>
-                                                <div class="stat">
-                                                    <i class="fas fa-hat-wizard"></i>
-                                                    <span>Government: Arcane Council</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="learn-more-btn">Learn More <i
-                                                class="fas fa-arrow-right"></i></button>
-                                    </div>
-                                </div>
+                <!-- Main Continent Card -->
+                <div class="map-card group rounded-2xl p-8 shadow-2xl hover:shadow-3xl ornate-border">
+                    <div class="relative">
+                        <!-- Image Placeholder with Gradient -->
+                        <div class="image-placeholder aspect-[4/3] rounded-xl mb-6 flex items-center justify-center text-white">
+                            <div class="text-center">
+                            <img src="{{ asset('images/map/PagalanMap.jpg') }}" alt="pagalan map">
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Other map sections -->
-                    <div class="map-image" id="eastern-map">
-                        <div class="map-canvas">
-                            <div class="map-wrapper">
-                                <img src="{{ asset('images/map/EasternIsles.png') }}" alt="Eastern Isles of Pagalan"
-                                    class="img-fluid">
-                                <!-- Add Eastern Isles hotspots and regions here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-image" id="southern-map">
-                        <div class="map-canvas">
-                            <div class="map-wrapper">
-                                <img src="{{ asset('images/map/SouthernTerritories.png') }}"
-                                    alt="Southern Territories of Pagalan" class="img-fluid">
-                                <!-- Add Southern Territories hotspots and regions here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-image" id="northern-map">
-                        <div class="map-canvas">
-                            <div class="map-wrapper">
-                                <img src="{{ asset('images/map/NorthernLands.png') }}" alt="Northern Lands of Pagalan"
-                                    class="img-fluid">
-                                <!-- Add Northern Lands hotspots and regions here -->
+                        <!-- Content -->
+                        <div class="space-y-4">
+                            <h3 class="font-fantasy text-3xl font-bold text-mystical-blue group-hover:text-ancient-gold transition-colors duration-300">
+                                The Heart of Pagalan
+                            </h3>
+                            <p class="font-elegant text-lg text-shadow-gray leading-relaxed">
+                                The central continent featuring the refined realm of <span class="font-semibold text-deep-bronze">Trebos</span>,
+                                the cultural heart of <span class="font-semibold text-deep-bronze">Lobos</span>, and the mysterious lands of
+                                <span class="font-semibold text-deep-bronze">Sirath</span>. Here, ancient civilizations flourish amidst
+                                fertile valleys and marble cities.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-ancient-gold bg-opacity-20 text-deep-bronze rounded-full text-sm font-elegant">Trebos</span>
+                                <span class="px-3 py-1 bg-mystical-blue bg-opacity-20 text-mystical-blue rounded-full text-sm font-elegant">Lobos</span>
+                                <span class="px-3 py-1 bg-deep-bronze bg-opacity-20 text-deep-bronze rounded-full text-sm font-elegant">Sirath</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="map-legend">
-                    <h4>Map Legend</h4>
-                    <div class="legend-items">
-                        <div class="legend-item">
-                            <span class="legend-marker city"></span>
-                            <span>Major Cities</span>
+                <!-- Eastern Isles Card -->
+                <div class="map-card group rounded-2xl p-8 shadow-2xl hover:shadow-3xl ornate-border">
+                    <div class="relative">
+                        <!-- Image Placeholder -->
+                        <div class="image-placeholder aspect-[4/3] rounded-xl mb-6 flex items-center justify-center text-white" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
+                            <div class="text-center">
+                              <img src="{{ asset('images/map/EasternIsles.png') }}" alt="Eastern Isles Map">
+                                <p class="font-elegant text-lg">Eastern Isles Map</p>
+                            </div>
                         </div>
-                        <div class="legend-item">
-                            <span class="legend-marker landmark"></span>
-                            <span>Landmarks</span>
+
+                        <div class="space-y-4">
+                            <h3 class="font-fantasy text-3xl font-bold text-mystical-blue group-hover:text-ancient-gold transition-colors duration-300">
+                                Mysterious Eastern Isles
+                            </h3>
+                            <p class="font-elegant text-lg text-shadow-gray leading-relaxed">
+                                A chain of enigmatic islands shrouded in ancient magic and forgotten secrets. Including the legendary
+                                <span class="font-semibold text-deep-bronze">Ridge</span> and the mystical
+                                <span class="font-semibold text-deep-bronze">Nebulee</span>, where reality itself seems to bend and twist.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-elegant">The Ridge</span>
+                                <span class="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm font-elegant">The Nebulee</span>
+                                <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm font-elegant">Ancient Ruins</span>
+                            </div>
                         </div>
-                        <div class="legend-item">
-                            <span class="legend-marker battle"></span>
-                            <span>Battle Sites</span>
+                    </div>
+                </div>
+
+                <!-- Southern Territories Card -->
+                <div class="map-card group rounded-2xl p-8 shadow-2xl hover:shadow-3xl ornate-border">
+                    <div class="relative">
+                        <!-- Image Placeholder -->
+                        <div class="image-placeholder aspect-[4/3] rounded-xl mb-6 flex items-center justify-center text-white" style="background: linear-gradient(135deg, #0891b2 0%, #0369a1 100%);">
+                            <div class="text-center">
+                                <img src="{{ asset('images/map/SouthernTerritories.png') }}" alt="Southern Territories Map">
+                                <p class="font-elegant text-lg">Southern Territories Map</p>
+                            </div>
                         </div>
-                        <div class="legend-item">
-                            <span class="legend-marker magic"></span>
-                            <span>Magic Hotspots</span>
+
+                        <div class="space-y-4">
+                            <h3 class="font-fantasy text-3xl font-bold text-mystical-blue group-hover:text-ancient-gold transition-colors duration-300">
+                                Far Southern Lands
+                            </h3>
+                            <p class="font-elegant text-lg text-shadow-gray leading-relaxed">
+                                Harsh territories of eternal winter and ice-bound coasts, home to the resilient southern peoples.
+                                The fortified settlement of <span class="font-semibold text-deep-bronze">Deleneos</span> stands as a
+                                beacon of civilization against the frozen wilderness.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-cyan-200 text-cyan-800 rounded-full text-sm font-elegant">Deleneos</span>
+                                <span class="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm font-elegant">Ice Fields</span>
+                                <span class="px-3 py-1 bg-slate-200 text-slate-800 rounded-full text-sm font-elegant">Frozen Coasts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Northern Lands Card -->
+                <div class="map-card group rounded-2xl p-8 shadow-2xl hover:shadow-3xl ornate-border">
+                    <div class="relative">
+                        <!-- Image Placeholder -->
+                        <div class="image-placeholder aspect-[4/3] rounded-xl mb-6 flex items-center justify-center text-white" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+                            <div class="text-center">
+                                <img src="{{ asset('images/map/NorthernLands.png') }}" alt="Northern Lands Map">
+                                <p class="font-elegant text-lg">Northern Lands Map</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="font-fantasy text-3xl font-bold text-mystical-blue group-hover:text-ancient-gold transition-colors duration-300">
+                                Far Northern Islands
+                            </h3>
+                            <p class="font-elegant text-lg text-shadow-gray leading-relaxed">
+                                Windswept archipelagos of hardy seafarers including <span class="font-semibold text-deep-bronze">Quinn</span>,
+                                <span class="font-semibold text-deep-bronze">Pinto</span>, and the twin islands of
+                                <span class="font-semibold text-deep-bronze">Crystalia Major & Minor</span>. These stoic peoples master the harsh northern seas.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-emerald-200 text-emerald-800 rounded-full text-sm font-elegant">Quinn</span>
+                                <span class="px-3 py-1 bg-teal-200 text-teal-800 rounded-full text-sm font-elegant">Pinto</span>
+                                <span class="px-3 py-1 bg-green-200 text-green-800 rounded-full text-sm font-elegant">Crystalia Islands</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special: Banton Island & Cadmun -->
+                <div class="lg:col-span-2">
+                    <div class="map-card group rounded-2xl p-8 shadow-2xl hover:shadow-3xl ornate-border">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="space-y-6">
+                                <h3 class="font-fantasy text-4xl font-bold text-mystical-blue group-hover:text-ancient-gold transition-colors duration-300">
+                                    Strategic Realms
+                                </h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="font-fantasy text-2xl font-semibold text-deep-bronze mb-2">Banton Island</h4>
+                                        <p class="font-elegant text-lg text-shadow-gray">Morganuke's homeland - a hardy island of independent folk, shaped by sea winds and ancient traditions.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-fantasy text-2xl font-semibold text-deep-bronze mb-2">Cadmun</h4>
+                                        <p class="font-elegant text-lg text-shadow-gray">Maritime warriors with flame-red hair and fierce loyalty, masters of both sea and forge.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-fantasy text-2xl font-semibold text-deep-bronze mb-2">Ventor</h4>
+                                        <p class="font-elegant text-lg text-shadow-gray">The dark homeland of the Cordinen Empire - a realm of conquest and military supremacy.</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 pt-4">
+                                    <span class="px-4 py-2 bg-ancient-gold bg-opacity-20 text-deep-bronze rounded-full font-elegant">Allied Territories</span>
+                                    <span class="px-4 py-2 bg-red-200 text-red-800 rounded-full font-elegant">Enemy Strongholds</span>
+                                </div>
+                            </div>
+
+                            <div class="image-placeholder aspect-[4/3] rounded-xl flex items-center justify-center text-white" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+                                <div class="text-center">
+                                    <img src="{{ asset('images/map/StrategicRealmsMap.jpg') }}" alt="Strategic Realms Map">
+                                    <p class="font-elegant text-xl">Strategic Realms Map</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Cultures & Races Section -->
+    <section class="py-16 bg-gradient-to-br from-slate-900 via-yellow-900 to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+                    Cultures & Races of Pagalan
+                </h2>
+                <p class="text-xl text-gray-800 max-w-3xl mx-auto">
+                    Discover the diverse peoples and civilizations that shape the world of Pagalan, from the hardy
+                    islanders of Banton to the mysterious dwellers of The Nebulee.
+                </p>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="flex justify-center mb-12">
+                <nav class="flex space-x-1 bg-gray-800 p-2 rounded-lg">
+                    <button
+                        class="tab-btn px-6 py-3 text-sm font-medium rounded-md text-white bg-purple-600 transition-all duration-200"
+                        data-tab="peoples">
+                        Peoples & Places
+                    </button>
+                    <button
+                        class="tab-btn px-6 py-3 text-sm font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 transition-all duration-200"
+                        data-tab="characters">
+                        Key Characters
+                    </button>
+                    <button
+                        class="tab-btn px-6 py-3 text-sm font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 transition-all duration-200"
+                        data-tab="mysterious">
+                        Mysterious Lands
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Peoples & Places Tab -->
+            <div id="peoples" class="tab-content active">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Banton Island -->
+                    <div class="culture-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 to-teal-600 flex items-center justify-center">
+                            {{-- <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold mb-2">Banton Island</h3>
+                                <p class="text-blue-100">The Bantonese People</p>
+                            </div> --}}
+
+                            <img src="{{ asset('images/map/Banton_Island.png') }}" alt="Banton Island" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="text-blue-600 font-semibold">Traits:</span>
+                                <span class="ml-2 text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">Hardy &
+                                    Independent</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                A resilient folk forged by sea winds and stony soil. Known for their stubborn
+                                pragmatism, fierce local loyalty, and deep mistrust of distant rulers.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                    <span>Values: Honour, Work, and Land</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                    <span>Governed by local traditions</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                                    <span>Morganuke's homeland</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lobos - Epleon -->
+                    <div class="culture-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl">
+                        <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center">
+                            {{-- <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold mb-2">Lobos</h3>
+                                <p class="text-amber-100">The Epleon People</p>
+                            </div> --}}
+                            <img src="{{ asset('images/map/Lobos.png') }}" alt="Lobos - Epleon" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="text-amber-600 font-semibold">Traits:</span>
+                                <span class="ml-2 text-sm bg-amber-100 text-amber-800 px-2 py-1 rounded">Refined &
+                                    Sophisticated</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                The cultural heart of Pagalan, known for their love of excellence, honor, and the arts.
+                                They balance pleasure with duty and legacy.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                                    <span>Tripartite Government Structure</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                                    <span>Masters of art and governance</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                                    <span>Follow the Epleonic Code</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cadmun -->
+                    <div class="culture-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl">
+                        <div class="h-48 bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center">
+                            {{-- <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold mb-2">Cadmun</h3>
+                                <p class="text-emerald-100">The Cadmunese People</p>
+                            </div> --}}
+                            <img src="{{ asset('images/map/Cadmun.png') }}" alt="Cadmun" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="text-emerald-600 font-semibold">Traits:</span>
+                                <span class="ml-2 text-sm bg-emerald-100 text-emerald-800 px-2 py-1 rounded">Proud &
+                                    Seafaring</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Red-haired warriors and sailors from windswept fjords. Known for their martial strength,
+                                independence, and naval prowess.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                                    <span>Distinctive red hair and green eyes</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                                    <span>Exceptional fighters and sailors</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                                    <span>Governed by High Council</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventor - Cordinen -->
+                    <div class="culture-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl">
+                        <div class="h-48 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
+                            {{-- <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold mb-2">Ventor</h3>
+                                <p class="text-red-100">The Cordinen People</p>
+                            </div> --}}
+                            <img src="{{ asset('images/map/Ventor.png') }}" alt="Ventor - Cordinen" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="text-red-600 font-semibold">Traits:</span>
+                                <span class="ml-2 text-sm bg-red-100 text-red-800 px-2 py-1 rounded">Warlike &
+                                    Dominating</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                A conquest-driven people built on domination and militarism. Their society revolves
+                                around racial superiority and the divine right to rule by force.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                    <span>Rigidly stratified military society</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                    <span>Maintain slave populations</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                    <span>Cities are barrack-hives</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trebos -->
+                    <div class="culture-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl">
+                        <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                            {{-- <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold mb-2">Trebos</h3>
+                                <p class="text-purple-100">The Trebosian People</p>
+                            </div> --}}
+                            <img src="{{ asset('images/map/Trebos.png') }}" alt="Trebos" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="text-purple-600 font-semibold">Traits:</span>
+                                <span class="ml-2 text-sm bg-purple-100 text-purple-800 px-2 py-1 rounded">Diplomatic &
+                                    Neutral</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Cultured and prosperous folk known for wealth, diplomacy, and neutrality. They value
+                                reason over emotion and commerce over conquest.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                    <span>Governed by elected council</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                    <span>Melinor Skoln's homeland</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                    <span>Masters of arts and diplomacy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Far Northern Islands -->
+                    <div class="culture-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 to-teal-600 flex items-center justify-center">
+                            {{-- <div class="text-center text-white">
+                                <h3 class="text-2xl font-bold mb-2">Far Northern Islands</h3>
+                                <p class="text-cyan-100">Quinn, Pinto, Crystalia</p>
+                            </div> --}}
+                            <img src="{{ asset('images/map/North_Islands.png') }}" alt="Far Northern Islands" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="text-cyan-600 font-semibold">Traits:</span>
+                                <span class="ml-2 text-sm bg-cyan-100 text-cyan-800 px-2 py-1 rounded">Stoic &
+                                    Self-Reliant</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Hardy folk shaped by harsh winters and salt-laden winds. Master seafarers who maintain
+                                diplomatic neutrality through trade.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
+                                    <span>Pale skin, fair hair, sea-green eyes</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
+                                    <span>Expert fishermen and traders</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
+                                    <span>Politically neutral archipelago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Characters Tab -->
+            <div id="characters" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Morganuke -->
+                    <div class="character-card bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                               <img src="{{ asset("images/characters/Morganuke.png") }}" alt="Morganuke Beldere" class="w-10 h-10 rounded-full">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Morganuke Beldere</h3>
+                                <p class="text-sm text-purple-600">Main Character</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">
+                            The mysterious silver-haired, crimson-eyed boy from Banton Island, raised by humble farmers
+                            but destined for greatness.
+                        </p>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                                <span>Unusual appearance: Silver hair, red eyes</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                                <span>Unnaturally articulate from young age</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                                <span>Seeks to uncover his true lineage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stovin & Plarem Beldere -->
+                    <div class="character-card bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <img src="{{ asset("images/characters/Stovin.png") }}" alt="Stovin & Plarem Beldere" class="w-10 h-10 rounded-full">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Stovin & Plarem Beldere</h3>
+                                <p class="text-sm text-green-600">Adopted Parents</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">
+                            The humble farming couple who raised Morganuke with love and strong values on Banton Island.
+                        </p>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                                <span>Stovin: Weathered farmer, quiet wisdom</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                                <span>Plarem: Warm, resilient, taught kindness</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                                <span>Shaped Morganuke's moral compass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fraytar DeLance -->
+                    <div class="character-card bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <img src="{{ asset("images/characters/Fraytar.png") }}" alt="Fraytar DeLance" class="w-10 h-10 rounded-full">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Fraytar DeLance</h3>
+                                <p class="text-sm text-blue-600">Seafarer & Mentor</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">
+                            The weathered seafarer who discovered Morganuke as an infant and became his mentor in
+                            uncovering ancient secrets.
+                        </p>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                                <span>Found Morganuke in rune-marked container</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                                <span>Maps ruins and forgotten ports</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                                <span>Guides Morganuke's journey</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calarel Francite -->
+                    <div class="character-card bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                                <img src="{{ asset("images/characters/Calarel.png") }}" alt="Calarel Francite" class="w-10 h-10 rounded-full">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Calarel Francite</h3>
+                                <p class="text-sm text-orange-600">Blacksmith's Daughter</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Spirited and sharp-witted daughter of the village blacksmith, Morganuke's childhood rival
+                            and first crush.
+                        </p>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+                                <span>Bright hazel eyes, chestnut hair</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+                                <span>Fiercely independent spirit</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-orange-400 rounded-full mr-2"></span>
+                                <span>"I'll never be someone's shadow"</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Melinor Skoln -->
+                    <div class="character-card bg-white rounded-xl shadow-lg p-6 border-l-4 border-pink-500">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                                <img src="{{ asset("images/characters/Melinor.png") }}" alt="Melinor Skoln" class="w-10 h-10 rounded-full">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Melinor Skoln</h3>
+                                <p class="text-sm text-pink-600">From Trebos</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">
+                            A quietly resilient 17-year-old from Trebos with long black hair and deep brown eyes, whose
+                            stillness hides strength.
+                        </p>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+                                <span>Stunningly beautiful with olive skin</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+                                <span>Sister to young Alorie</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+                                <span>Quiet intensity and discipline</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Commander General Falcar Tradish -->
+                    <div class="character-card bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-500">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                <img src="{{ asset("images/characters/Falcar.png") }}" alt="Falcar Tradish" class="w-10 h-10 rounded-full">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Falcar Tradish</h3>
+                                <p class="text-sm text-red-600">Alliance Commander</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">
+                            Towering Cadmun commander of the Banton-Cadmun Alliance, known for his flame-red hair and
+                            strategic brilliance.
+                        </p>
+                        <div class="space-y-1 text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                                <span>Over six feet tall, warrior braids</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                                <span>Commands forward operations teams</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                                <span>Sees potential in Morganuke</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mysterious Lands Tab -->
+            <div id="mysterious" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- The Nebulee -->
+                    <div class="bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 rounded-xl p-8 text-white">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🌫️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">The Nebulee</h3>
+                                <p class="text-gray-300">The Weeping Sea</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-200 mb-6">
+                            A vast, ever-shifting maritime region veiled in eternal mist, where islands appear and
+                            vanish like ghosts. Compasses spin aimlessly, stars vanish, and entire armadas have
+                            disappeared without a trace.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-cyan-400 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-200">The Patronese</h4>
+                                    <p class="text-sm text-gray-300">Ancient race cloaked in vapor and time, possessing
+                                        strange powers that defy known magic.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-cyan-400 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-200">Morganuke's Dreams</h4>
+                                    <p class="text-sm text-gray-300">Impossible spires, black obelisks with glowing
+                                        runes, and an ancient voice calling his name.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-cyan-400 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-cyan-200">The Drowned Reach</h4>
+                                    <p class="text-sm text-gray-300">Where dense, shimmering mists rise eternally from dark
+                                        waters, and the air is heavy with unnatural silence.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black bg-opacity-30 p-4 rounded-lg mt-4">
+                                <p class="text-sm italic text-gray-300">
+                                    "They speak not with words, nor light, nor dream. They wait beyond the world's
+                                    breath, in the place where time forgets."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Ridge -->
+                    <div class="bg-gradient-to-br from-orange-600 to-red-700 rounded-xl p-8 text-white">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🏔️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">The Ridge</h3>
+                                <p class="text-gray-300">Fractured Archipelago</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-200 mb-6">
+                            A treacherous region of volcanic islands and broken land between Pagalan and The Nebulee.
+                            The scarred remnant of a cataclysmic event that shattered the world itself.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-orange-200">The Scission</h4>
+                                    <p class="text-sm text-gray-300">An era-ending rift that broke the world's balance and
+                                        sealed away something that should not have existed.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-orange-200">Volcanic Plumes</h4>
+                                    <p class="text-sm text-gray-300">Subterranean heat boils the waters, and great stone
+                                        arcs rear like the vertebrae of a titanic beast.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-orange-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-orange-200">Twisted Reality</h4>
+                                    <p class="text-sm text-gray-300">Magnetic fields go awry, time passes unevenly, and
+                                        creatures appear from forgotten ages.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black bg-opacity-30 p-4 rounded-lg mt-4">
+                                <p class="text-sm italic text-gray-300">
+                                    "The geological strangeness is evidence of a world-shattering event that twisted the
+                                    very nature of reality."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Mysterious Regions -->
+                    <div class="bg-gradient-to-br from-teal-800 to-blue-900 rounded-xl p-8 text-white">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">❄️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Far Southern Lands</h3>
+                                <p class="text-gray-300">The Frost-Bound Edge</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-200 mb-6">
+                            At the bleak southern edge of Pagalan, where winter dominates and the earth is iron-hard.
+                            A place of perpetual grey skies and seas cold enough to kill within minutes.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-teal-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-teal-200">Deleneos</h4>
+                                    <p class="text-sm text-gray-300">The only true settlement, built from stone, packed
+                                        snow, and whalebone overlooking the Southern Ice flow.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-teal-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-teal-200">Ice Hunters</h4>
+                                    <p class="text-sm text-gray-300">Stoic people who survive through seal hunting, whaling,
+                                        and ice trapping in the harshest conditions.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black bg-opacity-30 p-4 rounded-lg mt-4">
+                                <p class="text-sm italic text-gray-300">
+                                    "Where the earth is often iron-hard, the skies perpetually grey, and the sea cold enough
+                                    to kill within minutes."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Far Northern Islands -->
+                    <div class="bg-gradient-to-br from-indigo-700 to-slate-800 rounded-xl p-8 text-white">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-2xl">🏝️</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Far Northern Islands</h3>
+                                <p class="text-gray-300">The Weathered Sentinels</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-200 mb-6">
+                            A scattered archipelago of Quinn, Pinto, Crystalia Major, and Crystalia Minor, sitting like
+                            weathered sentinels at the edge of the known world, shaped by harsh winters and salt-laden
+                            winds.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-indigo-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-indigo-200">Master Seafarers</h4>
+                                    <p class="text-sm text-gray-300">Navigate icy waters aboard clinker-built vessels,
+                                        trading across treacherous northern channels.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="w-2 h-2 bg-indigo-300 rounded-full mr-3 mt-2"></span>
+                                <div>
+                                    <h4 class="font-semibold text-indigo-200">Neutral Traders</h4>
+                                    <p class="text-sm text-gray-300">Maintain careful diplomatic neutrality, trading with
+                                        both alliance and enemy forces.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black bg-opacity-30 p-4 rounded-lg mt-4">
+                                <p class="text-sm italic text-gray-300">
+                                    "Their survival depends on their ability to trade and remain diplomatically neutral in a
+                                    world at war."
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,24 +901,15 @@
         </div>
     </section>
 
-    <!-- Culture and Races Section -->
-    <section class="culture-races">
-        <div class="container">
-            <h2 class="section-title text-center">Cultures & Races</h2>
-            <p class="section-description text-center">Discover the diverse inhabitants and cultures that shape Pagalan.
-            </p>
 
-            <div class="race-carousel">
-                <!-- Carousel items will be dynamically loaded -->
-            </div>
-        </div>
-    </section>
+
+
 
 @endsection
 
 @section('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Initialize GSAP ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
 
@@ -438,7 +1045,7 @@
             const mapImages = document.querySelectorAll('.map-image');
 
             mapNavButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const mapId = this.getAttribute('data-map');
 
                     // Reset position and scale when switching maps
@@ -481,7 +1088,7 @@
                 regionPath.style.strokeWidth = '2';
 
                 // Animation for hover
-                region.addEventListener('mouseenter', function() {
+                region.addEventListener('mouseenter', function () {
                     const regionName = this.getAttribute('data-region');
                     gsap.to(this.querySelector('.region-path'), {
                         fillOpacity: 0.5,
@@ -507,7 +1114,7 @@
                     }
                 });
 
-                region.addEventListener('mouseleave', function() {
+                region.addEventListener('mouseleave', function () {
                     const regionName = this.getAttribute('data-region');
                     gsap.to(this.querySelector('.region-path'), {
                         fillOpacity: 0.2,
@@ -536,7 +1143,7 @@
             // Enhanced Hotspot Interactions
             const hotspots = document.querySelectorAll('.map-hotspot');
             hotspots.forEach(hotspot => {
-                hotspot.addEventListener('mouseenter', function() {
+                hotspot.addEventListener('mouseenter', function () {
                     const regionName = this.getAttribute('data-region');
 
                     gsap.to(this.querySelector('.hotspot-info'), {
@@ -570,7 +1177,7 @@
                     }
                 });
 
-                hotspot.addEventListener('mouseleave', function() {
+                hotspot.addEventListener('mouseleave', function () {
                     const regionName = this.getAttribute('data-region');
 
                     gsap.to(this.querySelector('.hotspot-info'), {
@@ -598,25 +1205,25 @@
 
             // Culture & Races Dynamic Content
             const races = [{
-                    name: 'Humans',
-                    image: 'humans.png',
-                    description: 'Versatile and adaptable, humans have established diverse societies across Pagalan.'
-                },
-                {
-                    name: 'Elves',
-                    image: 'elves.png',
-                    description: 'Ancient and magical beings with deep connections to nature and arcane knowledge.'
-                },
-                {
-                    name: 'Dwarves',
-                    image: 'dwarves.png',
-                    description: 'Master craftsmen and miners who dwell in magnificent underground kingdoms.'
-                },
-                {
-                    name: 'Orcs',
-                    image: 'orcs.png',
-                    description: 'Powerful warriors with rich tribal cultures and strong spiritual traditions.'
-                }
+                name: 'Humans',
+                image: 'humans.png',
+                description: 'Versatile and adaptable, humans have established diverse societies across Pagalan.'
+            },
+            {
+                name: 'Elves',
+                image: 'elves.png',
+                description: 'Ancient and magical beings with deep connections to nature and arcane knowledge.'
+            },
+            {
+                name: 'Dwarves',
+                image: 'dwarves.png',
+                description: 'Master craftsmen and miners who dwell in magnificent underground kingdoms.'
+            },
+            {
+                name: 'Orcs',
+                image: 'orcs.png',
+                description: 'Powerful warriors with rich tribal cultures and strong spiritual traditions.'
+            }
             ];
 
             // Populate race carousel (implementation would depend on carousel library)
@@ -627,15 +1234,15 @@
                 raceCard.className = 'race-card';
 
                 raceCard.innerHTML = `
-            <div class="race-image">
-                <img src="{{ asset('images/races/${race.image}') }}" alt="${race.name}" class="img-fluid">
-            </div>
-            <div class="race-info">
-                <h3>${race.name}</h3>
-                <p>${race.description}</p>
+                        <div class="race-image">
+                            <img src="{{ asset('images/races/${race.image}') }}" alt="${race.name}" class="img-fluid">
+                        </div>
+                        <div class="race-info">
+                            <h3>${race.name}</h3>
+                            <p>${race.description}</p>
 
-            </div>
-        `;
+                        </div>
+                    `;
 
                 raceCarousel.appendChild(raceCard);
             });
@@ -646,17 +1253,17 @@
                 new Carousel('.race-carousel', {
                     slidesToShow: 3,
                     responsive: [{
-                            breakpoint: 992,
-                            settings: {
-                                slidesToShow: 2
-                            }
-                        },
-                        {
-                            breakpoint: 576,
-                            settings: {
-                                slidesToShow: 1
-                            }
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2
                         }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
                     ]
                 });
             }
@@ -666,7 +1273,7 @@
                 if (window.innerWidth < 768) {
                     // Make some adjustments for mobile
                     document.querySelectorAll('.map-hotspot').forEach(hotspot => {
-                        hotspot.addEventListener('click', function(e) {
+                        hotspot.addEventListener('click', function (e) {
                             e.stopPropagation();
 
                             // Hide all other hotspot infos
@@ -693,7 +1300,7 @@
                     });
 
                     // Hide hotspot info when clicking elsewhere
-                    document.addEventListener('click', function() {
+                    document.addEventListener('click', function () {
                         document.querySelectorAll('.hotspot-info').forEach(info => {
                             gsap.to(info, {
                                 opacity: 0,
@@ -710,415 +1317,45 @@
         });
     </script>
 
-    <script>
-        // Map Initialization Function
-function initializeMap() {
-    // Ensure the DOM is fully loaded
-    console.log('Map initialization started');
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-    // Get active map container
-    const mapContainer = document.querySelector('.map-container');
-    if (!mapContainer) {
-        console.error('Map container not found');
-        return;
-    }
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
 
-    // Map state variables
-    let currentScale = 1;
-    let isDragging = false;
-    let startPos = { x: 0, y: 0 };
-    let currentPos = { x: 0, y: 0 };
-
-    // Initialize map navigation buttons
-    const mapNavButtons = document.querySelectorAll('.map-nav-btn');
-    mapNavButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons and map images
-            document.querySelectorAll('.map-nav-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.map-image').forEach(map => map.classList.remove('active'));
-
-            // Add active class to clicked button and corresponding map
-            button.classList.add('active');
-            const mapId = `${button.getAttribute('data-map')}-map`;
-            const mapElement = document.getElementById(mapId);
-            if (mapElement) {
-                mapElement.classList.add('active');
-
-                // Reset position and scale when switching maps
-                currentScale = 1;
-                currentPos = { x: 0, y: 0 };
-                updateMapTransform();
-            }
-        });
-    });
-
-    // Setup map controls
-    const zoomIn = document.getElementById('zoomIn');
-    const zoomOut = document.getElementById('zoomOut');
-    const resetView = document.getElementById('resetView');
-
-    if (zoomIn) {
-        zoomIn.addEventListener('click', () => {
-            currentScale = Math.min(currentScale * 1.2, 3);
-            updateMapTransform();
-            console.log('Zoom in clicked. Scale:', currentScale);
-        });
-    } else {
-        console.error('Zoom in button not found');
-    }
-
-    if (zoomOut) {
-        zoomOut.addEventListener('click', () => {
-            currentScale = Math.max(currentScale / 1.2, 0.5);
-            updateMapTransform();
-            console.log('Zoom out clicked. Scale:', currentScale);
-        });
-    } else {
-        console.error('Zoom out button not found');
-    }
-
-    if (resetView) {
-        resetView.addEventListener('click', () => {
-            currentScale = 1;
-            currentPos = { x: 0, y: 0 };
-            updateMapTransform();
-            console.log('Reset view clicked');
-        });
-    } else {
-        console.error('Reset view button not found');
-    }
-
-    // Map dragging functionality
-    function startDragging(e) {
-        isDragging = true;
-        const pos = getEventPosition(e);
-        startPos = {
-            x: pos.x - currentPos.x,
-            y: pos.y - currentPos.y
-        };
-        e.preventDefault();
-    }
-
-    function handleDrag(e) {
-        if (!isDragging) return;
-
-        const pos = getEventPosition(e);
-        currentPos = {
-            x: pos.x - startPos.x,
-            y: pos.y - startPos.y
-        };
-        updateMapTransform();
-    }
-
-    function stopDragging() {
-        isDragging = false;
-    }
-
-    function getEventPosition(e) {
-        if (e.touches && e.touches[0]) {
-            return {
-                x: e.touches[0].clientX,
-                y: e.touches[0].clientY
-            };
-        }
-        return {
-            x: e.clientX,
-            y: e.clientY
-        };
-    }
-
-    // Add event listeners for map dragging
-    document.querySelectorAll('.map-wrapper').forEach(wrapper => {
-        wrapper.addEventListener('mousedown', startDragging);
-        wrapper.addEventListener('touchstart', startDragging, { passive: false });
-    });
-
-    document.addEventListener('mousemove', handleDrag);
-    document.addEventListener('touchmove', handleDrag, { passive: false });
-    document.addEventListener('mouseup', stopDragging);
-    document.addEventListener('touchend', stopDragging);
-
-    // Update map transform
-    function updateMapTransform() {
-        const activeMap = document.querySelector('.map-image.active .map-wrapper');
-        if (activeMap) {
-            activeMap.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${currentScale})`;
-        } else {
-            console.warn('No active map found');
-        }
-    }
-
-    // Initialize hotspot functionality
-    const hotspots = document.querySelectorAll('.map-hotspot');
-    hotspots.forEach(hotspot => {
-        hotspot.addEventListener('click', () => {
-            // Toggle active state
-            document.querySelectorAll('.map-hotspot').forEach(h => {
-                if (h !== hotspot) h.classList.remove('active');
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => {
+                btn.classList.remove('bg-purple-600', 'text-white');
+                btn.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-gray-700');
             });
-            hotspot.classList.toggle('active');
-        });
-    });
 
-    // Initialize map regions
-    const regions = document.querySelectorAll('.map-region');
-    regions.forEach(region => {
-        region.addEventListener('mouseenter', () => {
-            const regionName = region.getAttribute('data-region');
-            const tooltip = document.createElement('div');
-            tooltip.className = 'region-tooltip';
-            tooltip.textContent = regionName;
-            region.appendChild(tooltip);
-        });
+            // Add active class to clicked button
+            this.classList.add('bg-purple-600', 'text-white');
+            this.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-gray-700');
 
-        region.addEventListener('mouseleave', () => {
-            const tooltip = region.querySelector('.region-tooltip');
-            if (tooltip) region.removeChild(tooltip);
-        });
+            // Hide all tab contents
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
 
-        region.addEventListener('click', () => {
-            const regionName = region.getAttribute('data-region');
-            // Find and show the corresponding hotspot info
-            const hotspot = document.querySelector(`.map-hotspot[data-region="${regionName}"]`);
-            if (hotspot) {
-                document.querySelectorAll('.map-hotspot').forEach(h => {
-                    if (h !== hotspot) h.classList.remove('active');
-                });
-                hotspot.classList.add('active');
+            // Show target tab content
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                targetContent.style.display = 'block';
             }
         });
     });
-
-    // Additional CSS for smooth transitions
-    const style = document.createElement('style');
-    style.textContent = `
-        .map-wrapper {
-            transition: transform 0.2s ease-out;
-            transform-origin: center;
-        }
-        .map-hotspot.active .hotspot-info {
-            display: block;
-        }
-        .region-tooltip {
-            position: absolute;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            z-index: 100;
-            pointer-events: none;
-            white-space: nowrap;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Set initial state
-    updateMapTransform();
-    console.log('Map initialization completed');
-}
-
-// Run initialization on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', initializeMap);
-
-// Add a backup initialization for cases where the script loads after DOMContentLoaded
-if (document.readyState !== 'loading') {
-    console.log('Document already ready, initializing map');
-    initializeMap();
-}
-    </script>
-
-    <script>
-        class CultureCarousel {
-            constructor(element, options = {}) {
-                this.container = element;
-                this.options = {
-                    slidesToShow: 3,
-                    autoplay: true,
-                    autoplaySpeed: 5000,
-                    ...options
-                };
-
-                this.currentSlide = 0;
-                this.slides = [];
-                this.init();
-            }
-
-            init() {
-                // Create carousel structure
-                this.container.innerHTML = `
-            <div class="carousel-wrapper">
-                <div class="carousel-track"></div>
-                <button class="carousel-prev">&lt;</button>
-                <button class="carousel-next">&gt;</button>
-                <div class="carousel-dots"></div>
-            </div>
-        `;
-
-                this.track = this.container.querySelector('.carousel-track');
-
-                // Add races data
-                this.addRaces();
-
-                // Setup controls
-                this.setupControls();
-
-                // Start autoplay if enabled
-                if (this.options.autoplay) {
-                    this.startAutoplay();
-                }
-
-                // Handle resize
-                window.addEventListener('resize', () => this.handleResize());
-                this.handleResize();
-            }
-
-            addRaces() {
-                const races = [{
-                        name: 'Humans',
-                        image: 'humans.jpg',
-                        description: 'Versatile and adaptable, humans have established diverse societies across Pagalan.',
-                        traits: ['Adaptable', 'Diplomatic', 'Innovative']
-                    },
-                    {
-                        name: 'Elves',
-                        image: 'elves.jpg',
-                        description: 'Ancient and magical beings with deep connections to nature and arcane knowledge.',
-                        traits: ['Magical', 'Long-lived', 'Nature-bound']
-                    },
-                    {
-                        name: 'Dwarves',
-                        image: 'dwarves.jpg',
-                        description: 'Master craftsmen and miners who dwell in magnificent underground kingdoms.',
-                        traits: ['Crafting', 'Mining', 'Resilient']
-                    },
-                    {
-                        name: 'Orcs',
-                        image: 'orcs.jpg',
-                        description: 'Powerful warriors with rich tribal cultures and strong spiritual traditions.',
-                        traits: ['Strong', 'Tribal', 'Spiritual']
-                    }
-                ];
-
-                races.forEach(race => {
-                    const slide = document.createElement('div');
-                    slide.className = 'carousel-slide';
-                    slide.innerHTML = `
-                <div class="race-card">
-                    <div class="race-image">
-                        <img src="/images/races/${race.image}" alt="${race.name}"
-                             onerror="this.src='/images/races/placeholder.jpg'">
-                    </div>
-                    <div class="race-info">
-                        <h3>${race.name}</h3>
-                        <p>${race.description}</p>
-                        <div class="race-traits">
-                            ${race.traits.map(trait => `<span class="trait-tag">${trait}</span>`).join('')}
-                        </div>
-                        <button class="btn btn-outline-primary btn-learn-more">Learn More</button>
-                    </div>
-                </div>
-            `;
-                    this.track.appendChild(slide);
-                    this.slides.push(slide);
-                });
-            }
-
-            setupControls() {
-                const prev = this.container.querySelector('.carousel-prev');
-                const next = this.container.querySelector('.carousel-next');
-                const dots = this.container.querySelector('.carousel-dots');
-
-                // Create dots
-                this.slides.forEach((_, index) => {
-                    const dot = document.createElement('button');
-                    dot.className = 'carousel-dot';
-                    dot.addEventListener('click', () => this.goToSlide(index));
-                    dots.appendChild(dot);
-                });
-
-                // Setup navigation
-                prev.addEventListener('click', () => this.prevSlide());
-                next.addEventListener('click', () => this.nextSlide());
-
-                // Update active state
-                this.updateSlides();
-            }
-
-            handleResize() {
-                const width = window.innerWidth;
-                if (width < 768) {
-                    this.options.slidesToShow = 1;
-                } else if (width < 1024) {
-                    this.options.slidesToShow = 2;
-                } else {
-                    this.options.slidesToShow = 3;
-                }
-                this.updateSlides();
-            }
-
-            updateSlides() {
-                const slideWidth = 100 / this.options.slidesToShow;
-                this.slides.forEach((slide, index) => {
-                    slide.style.width = `${slideWidth}%`;
-                    slide.style.transform = `translateX(${(index - this.currentSlide) * 100}%)`;
-                });
-
-                // Update dots
-                const dots = this.container.querySelectorAll('.carousel-dot');
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === this.currentSlide);
-                });
-            }
-
-            nextSlide() {
-                this.goToSlide((this.currentSlide + 1) % this.slides.length);
-            }
-
-            prevSlide() {
-                this.goToSlide((this.currentSlide - 1 + this.slides.length) % this.slides.length);
-            }
-
-            goToSlide(index) {
-                this.currentSlide = index;
-                this.updateSlides();
-            }
-
-            startAutoplay() {
-                this.autoplayInterval = setInterval(() => {
-                    this.nextSlide();
-                }, this.options.autoplaySpeed);
-            }
-
-            stopAutoplay() {
-                if (this.autoplayInterval) {
-                    clearInterval(this.autoplayInterval);
-                }
-            }
-        }
-    </script>
-
+});
+</script>
 @endsection
 
 @section('styles')
     <style>
-        /* Base Variables */
-        /* :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e74c3c;
-            --accent-color: #3498db;
-            --accent-color-hover: #2980b9;
-            --dark-color: #2c3e50;
-            --light-color: #ecf0f1;
-            --magic-color: #9b59b6;
-            --transition: all 0.3s ease;
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Cinzel', serif;
-            --font-text: 'Open Sans', sans-serif;
-        } */
-
         /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
 
@@ -1769,343 +2006,479 @@ if (document.readyState !== 'loading') {
 
     <style>
         /* Map Container Styles */
-.map-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-/* Map Navigation Styles */
-.map-navigation {
-    background: #2c3e50;
-    padding: 10px;
-    overflow-x: auto;
-}
+        /* Map Navigation Styles */
+        .map-navigation {
+            background: #2c3e50;
+            padding: 10px;
+            overflow-x: auto;
+        }
 
-.nav-scroll {
-    display: flex;
-    min-width: 100%;
-}
+        .nav-scroll {
+            display: flex;
+            min-width: 100%;
+        }
 
-.map-nav-btn {
-    background: transparent;
-    color: #ecf0f1;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-}
+        .map-nav-btn {
+            background: transparent;
+            color: #ecf0f1;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
 
-.map-nav-btn i {
-    margin-right: 8px;
-}
+        .map-nav-btn i {
+            margin-right: 8px;
+        }
 
-.map-nav-btn.active {
-    background: #3498db;
-    color: white;
-}
+        .map-nav-btn.active {
+            background: #3498db;
+            color: white;
+        }
 
-/* Map Viewer Styles */
-.map-viewer {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    background: #f5f5f5;
-    overflow: hidden;
-}
+        /* Map Viewer Styles */
+        .map-viewer {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
 
-.map-controls {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .map-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.control-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
-}
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
 
-.control-btn:hover {
-    background: white;
-    transform: scale(1.1);
-}
+        .control-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
 
-/* Map Image Styles */
-.map-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
+        /* Map Image Styles */
+        .map-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
 
-.map-image.active {
-    display: block;
-}
+        .map-image.active {
+            display: block;
+        }
 
-.map-canvas {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
+        .map-canvas {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
 
-.map-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-origin: center;
-    touch-action: none;
-}
+        .map-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            touch-action: none;
+        }
 
-.map-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+        .map-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-/* Map Regions and Hotspots */
-.map-region {
-    position: absolute;
-    cursor: pointer;
-}
+        /* Map Regions and Hotspots */
+        .map-region {
+            position: absolute;
+            cursor: pointer;
+        }
 
-.region-path {
-    fill: rgba(52, 152, 219, 0.3);
-    stroke: #3498db;
-    stroke-width: 2;
-    transition: all 0.3s ease;
-}
+        .region-path {
+            fill: rgba(52, 152, 219, 0.3);
+            stroke: #3498db;
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
 
-.map-region:hover .region-path {
-    fill: rgba(52, 152, 219, 0.5);
-}
+        .map-region:hover .region-path {
+            fill: rgba(52, 152, 219, 0.5);
+        }
 
-.map-hotspot {
-    position: absolute;
-    z-index: 5;
-}
+        .map-hotspot {
+            position: absolute;
+            z-index: 5;
+        }
 
-.hotspot-marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #e74c3c;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 0 0 2px white;
-}
+        .hotspot-marker {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #e74c3c;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 0 0 2px white;
+        }
 
-.ripple {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(231, 76, 60, 0.4);
-    animation: ripple 2s infinite;
-}
+        .ripple {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(231, 76, 60, 0.4);
+            animation: ripple 2s infinite;
+        }
 
-@keyframes ripple {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2.5);
-        opacity: 0;
-    }
-}
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
 
-.hotspot-info {
-    position: absolute;
-    width: 280px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    top: 30px;
-    left: -130px;
-    z-index: 100;
-    display: none;
-}
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
 
-.map-hotspot.active .hotspot-info {
-    display: block;
-}
+        .hotspot-info {
+            position: absolute;
+            width: 280px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            top: 30px;
+            left: -130px;
+            z-index: 100;
+            display: none;
+        }
 
-.info-header {
-    margin-bottom: 10px;
-}
+        .map-hotspot.active .hotspot-info {
+            display: block;
+        }
 
-.info-header h4 {
-    margin: 0 0 5px 0;
-    color: #2c3e50;
-}
+        .info-header {
+            margin-bottom: 10px;
+        }
 
-.region-type {
-    font-size: 0.8em;
-    color: #7f8c8d;
-    display: block;
-}
+        .info-header h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
 
-.info-content p {
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
+        .region-type {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            display: block;
+        }
 
-.region-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-}
+        .info-content p {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
 
-.stat {
-    font-size: 0.8em;
-    display: flex;
-    align-items: center;
-    background: #f5f7fa;
-    padding: 5px 10px;
-    border-radius: 15px;
-}
+        .region-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
 
-.stat i {
-    margin-right: 5px;
-    color: #3498db;
-}
+        .stat {
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            background: #f5f7fa;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
 
-.learn-more-btn {
-    width: 100%;
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .stat i {
+            margin-right: 5px;
+            color: #3498db;
+        }
 
-.learn-more-btn i {
-    margin-left: 8px;
-}
+        .learn-more-btn {
+            width: 100%;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.learn-more-btn:hover {
-    background: #2980b9;
-}
+        .learn-more-btn i {
+            margin-left: 8px;
+        }
 
-/* Map Legend Styles */
-.map-legend {
-    background: white;
-    padding: 15px;
-    border-top: 1px solid #e1e1e1;
-}
+        .learn-more-btn:hover {
+            background: #2980b9;
+        }
 
-.map-legend h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #2c3e50;
-    font-size: 1em;
-}
+        /* Map Legend Styles */
+        .map-legend {
+            background: white;
+            padding: 15px;
+            border-top: 1px solid #e1e1e1;
+        }
 
-.legend-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+        .map-legend h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 1em;
+        }
 
-.legend-item {
-    display: flex;
-    align-items: center;
-    font-size: 0.9em;
-}
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-.legend-marker {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
 
-.legend-item span{
-    color: #2c3e50 !important;
-}
+        .legend-marker {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
 
-.legend-marker.city {
-    background: #e74c3c;
-}
+        .legend-item span {
+            color: #2c3e50 !important;
+        }
 
-.legend-marker.landmark {
-    background: #f39c12;
-}
+        .legend-marker.city {
+            background: #e74c3c;
+        }
 
-.legend-marker.battle {
-    background: #8e44ad;
-}
+        .legend-marker.landmark {
+            background: #f39c12;
+        }
 
-.legend-marker.magic {
-    background: #27ae60;
-}
+        .legend-marker.battle {
+            background: #8e44ad;
+        }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .map-viewer {
-        height: 400px;
-    }
+        .legend-marker.magic {
+            background: #27ae60;
+        }
 
-    .hotspot-info {
-        width: 220px;
-        left: -100px;
-    }
-}
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .map-viewer {
+                height: 400px;
+            }
 
-@media (max-width: 480px) {
-    .map-viewer {
-        height: 300px;
-    }
+            .hotspot-info {
+                width: 220px;
+                left: -100px;
+            }
+        }
 
-    .map-controls {
-        bottom: 10px;
-        right: 10px;
-    }
+        @media (max-width: 480px) {
+            .map-viewer {
+                height: 300px;
+            }
 
-    .control-btn {
-        width: 34px;
-        height: 34px;
-    }
+            .map-controls {
+                bottom: 10px;
+                right: 10px;
+            }
 
-    .hotspot-info {
-        width: 200px;
-        left: -90px;
-    }
-}
+            .control-btn {
+                width: 34px;
+                height: 34px;
+            }
+
+            .hotspot-info {
+                width: 200px;
+                left: -90px;
+            }
+        }
     </style>
+
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .culture-card {
+            transition: all 0.3s ease;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-card {
+            transition: all 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: scale(1.02);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .mysterious-bg {
+            background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+        }
+    </style>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+            to { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.3); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .shimmer {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        .map-card {
+            background: linear-gradient(135deg, rgba(244, 241, 232, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .map-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: left 0.5s;
+        }
+
+        .map-card:hover .image-placeholder::before {
+            left: 100%;
+        }
+
+        .ornate-border {
+            position: relative;
+        }
+
+        .ornate-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #D4AF37, #F7E7CE, #D4AF37, #8B4513);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .map-card:hover .ornate-border::before {
+            opacity: 1;
+        }
+    </style>
+    <style>
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Make sure the first tab is visible by default */
+#peoples {
+    display: block;
+}
+</style>
 @endsection
