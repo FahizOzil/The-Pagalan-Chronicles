@@ -1115,22 +1115,20 @@ document.addEventListener('DOMContentLoaded', function() {
    // Enhanced Chapter Preview with Dynamic Content Loading
 document.addEventListener('DOMContentLoaded', function() {
     // Chapter content sections
-    const chapterContent = [
-        {
-            title: "Chapter 1: The Beginning",
-            content: `<p>The mist hung low over Morganuke Forest as dawn broke, casting an ethereal glow across the ancient trees. Elian adjusted the pack on his shoulders, his eyes scanning the path ahead. The Council's warning echoed in his mind: "Find the Roots before the solstice, or all will be lost."</p>
-                     <p>He had spent three years preparing for this journey, studying the old texts, memorizing the maps, training his body for the trials ahead. But nothing could prepare him for what awaited in the depths of Morganuke.</p>`
-        },
-        {
-            content: `<p>As he stepped deeper into the forest, the air thickened with magic, and the trees whispered secrets of ages past. Elian felt a shiver run down his spine. This was not just a quest for knowledge; it was a test of his very soul.</p>
-                     <p>With each step, he could feel the weight of destiny pressing down on him. The fate of Pagalan rested on his shoulders, and he was determined to uncover the truth hidden within the roots of Morganuke.</p>`
-        },
-        {
-            content: `<p>A distant howl echoed through the trees, causing Elian to freeze in his tracks. The Shadowbeasts were hunting tonight. He pulled his cloak tighter, seeking shelter beneath an ancient oak.</p>
-                     <p>"You shouldn't be here, traveler," came a voice from the shadows. Elian spun around, reaching for his blade. An old woman stood before him, her eyes glowing with an unnatural blue light.</p>
-                     <p>"The Roots cannot be found by those who seek them," she continued. "Only by those who are worthy."</p>`
-        }
-    ];
+   const chapterContent = [
+    {
+        title: "Chapter 1: The Island",
+        content: `<p>Morganuke sat on the beach, listening to the waves crashing against the rocks and contemplating his life on the island of Banton. It was midday, and the sun felt warm on his pale young face. Seabirds circled above him, screeching their call.</p>
+                 <p>He looked out over the bay and spotted a group of small fishing boats a little way out to sea. Fishing was necessary for the island, as it was the people's primary food source for the coastal homes engaged in fishing. The boats bobbed up and down as the waves washed beneath them. Morganuke was dancing to their tune. <em>What would it be like to sail on the open sea?</em> Morganuke thought. <em>There must be so many things and strange places to visit if I went to sea.</em></p>`
+    },
+    {
+        content: `<p>He watched two children playing beside the sea further along the coast. They danced around the waves, laughing whilst they splashed each other with the salty water. He remembered when he was a boy doing similar things, although he was usually alone. He often would hunt for crabs in the rock pools close to where he was sitting. With a bucket in one hand and a small net in the other, he would look earnestly in each pool, hoping to find a crab or two to take home. He breathed a big sigh and tasted the salty air. Oh, what it was to live beside the sea and enjoy the sights and sounds of the beach life!</p>`
+    },
+    {
+        content: `<p>Morganuke had lived on the beach for nearly eighteen years after being found abandoned as a baby by Fraytar, his friend and mentor. Not knowing Morganuke's origins or who his parents were, Fraytar had taken Morganuke to a kindly couple on the island. Stovin and Plarem could not have children of their own,</p>`
+    }
+];
+
 
     // Get DOM elements
     const pageContent = document.querySelector('.page-content');
