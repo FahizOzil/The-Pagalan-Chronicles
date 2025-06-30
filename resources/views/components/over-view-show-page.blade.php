@@ -121,7 +121,7 @@
 
         .character-image img {
             width: 100%;
-            height: 100%;
+            height: 208%;
             object-fit: cover;
             transition: var(--transition);
             filter: brightness(0.85) saturate(1.2);
@@ -369,36 +369,57 @@
                     <h2 class="content-title">Key Characters</h2>
                     <div class="characters-grid">
                         @php
-                            $characters = [
-                                [
-                                    'name' => 'Morganuke',
-                                    'role' => 'The Guardian',
-                                    'description' =>
-                                        'A wise and powerful guardian of the realm with ancient knowledge of Pagalans secrets.',
-                                    'image' => 'Morganuke2.jpg',
-                                ],
-                                [
-                                    'name' => 'Eldrin',
-                                    'role' => 'The Seeker',
-                                    'description' =>
-                                        'A brave adventurer searching for the truth behind the realms mysterious prophecies.',
-                                    'image' => 'panel.jpg',
-                                ],
-                                [
-                                    'name' => 'Lyra',
-                                    'role' => 'The Enchantress',
-                                    'description' =>
-                                        'A skilled enchantress with a mysterious past and command over the elemental forces.',
-                                    'image' => 'bannerCharacters.jpg',
-                                ],
-                                [
-                                    'name' => 'Thorne',
-                                    'role' => 'The Warrior',
-                                    'description' =>
-                                        'A fierce warrior with unmatched strength and loyalty to the realm of Pagalan.',
-                                    'image' => 'banner3.jpg',
-                                ],
-                            ];
+                          $characters = [
+    [
+        'name' => 'Morganuke Beldere',
+        'role' => 'The Protagonist',
+        'description' => 'An enigmatic youth with silver hair and crimson eyes, raised by humble farmers but destined to uncover deep secrets of the Pagalan world.',
+        'image' => 'Morganuke.png',
+    ],
+    [
+        'name' => 'Stovin Beldere',
+        'role' => 'Adopted Father',
+        'description' => 'A quiet, principled farmer who raised Morganuke with wisdom and integrity on Banton Island.',
+        'image' => 'Stovin.png',
+    ],
+    // [
+    //     'name' => 'Plarem Beldere',
+    //     'role' => 'Adopted Mother',
+    //     'description' => 'A resilient and kind-hearted woman whose nurturing love shaped Morganuke’s early life.',
+    //     'image' => 'Plarem.jpg',
+    // ],
+    [
+        'name' => 'Fraytar DeLance',
+        'role' => 'The Seafarer',
+        'description' => 'A rugged sailor who discovered Morganuke as an infant and guided him as a mentor throughout his journey.',
+        'image' => 'Fraytar.png',
+    ],
+    [
+        'name' => 'Calarel Francite',
+        'role' => 'The Fierce Friend',
+        'description' => 'Bold, witty, and fiercely independent, she challenges and inspires Morganuke from childhood.',
+        'image' => 'Calarel.png',
+    ],
+    // [
+    //     'name' => 'Melinor Skoln',
+    //     'role' => 'The Quiet Strength',
+    //     'description' => 'Graceful, introspective, and quietly strong, Melinor is a complex character with deep emotional layers.',
+    //     'image' => 'Melinor.png',
+    // ],
+    // [
+    //     'name' => 'Lengrond Smidrich',
+    //     'role' => 'The Warrior',
+    //     'description' => 'A towering and loyal companion from Cadmun, known for his charisma and martial prowess.',
+    //     'image' => 'Lengrond.jpg',
+    // ],
+    // [
+    //     'name' => 'Lady Chanterly Bowderlong',
+    //     'role' => 'Commander of the Militia',
+    //     'description' => 'A powerful and principled leader of Banton Island’s women’s militia, carving her own legacy through strength and intellect.',
+    //     'image' => 'Chanterly.jpg',
+    // ]
+];
+
                         @endphp
 
                         @foreach ($characters as $character)

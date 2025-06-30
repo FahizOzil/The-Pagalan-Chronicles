@@ -812,12 +812,12 @@
             <i class="fas fa-book" aria-hidden="true"></i>
             {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
           </a>
-          <a href="{{ $book->bam_link ?? '#' }}"
+          {{-- <a href="{{ $book->bam_link ?? '#' }}"
             class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
             rel="noopener noreferrer" {{ $book->bam_link ? '' : 'disabled' }}>
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             {{ $book->is_upcoming ? 'Pre-order' : 'Books A Million' }}
-          </a>
+          </a> --}}
           </div>
         </div>
         </div>
@@ -839,12 +839,12 @@
             <i class="fas fa-book" aria-hidden="true"></i>
             {{ $book->is_upcoming ? 'Pre-order' : 'B&N' }}
           </a>
-          <a href="{{ $book->bam_link_soft ?? '#' }}"
+          {{-- <a href="{{ $book->bam_link_soft ?? '#' }}"
             class="btn-retailer direct {{ $book->is_upcoming ? 'pre-order' : '' }}" target="_blank"
             rel="noopener noreferrer" {{ $book->bam_link_soft ? '' : 'disabled' }}>
             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             {{ $book->is_upcoming ? 'Pre-order' : 'Books A Million' }}
-          </a>
+          </a> --}}
           </div>
         </div>
         </div>
